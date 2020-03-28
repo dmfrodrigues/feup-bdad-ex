@@ -1,0 +1,17 @@
+P01 = π nr (Aluno)
+P02 = π cod, design (Cadeira)
+P03 = π Nome (Aluno⨝Prof)
+P04 = (π Nome Aluno)-(π Nome Prof)
+P05 = (π Nome Aluno)∪(π Nome Prof)
+P06 = π Nome (Aluno⋉(π nr (σ cod='TS1' Prova)))
+P07 = π Nome (σ curso='IS' (Cadeira⨝Prova⨝Aluno))
+P08den = π cod (σ curso='IS' Cadeira)
+P08num = π Nome, cod (Aluno⨝(π nr, cod (σ nota>=10 Prova)))
+P08 = P08num÷P08den
+P09 = γ max(nota)->maxNota Prova
+P10 = γ avg(nota)->avgNota (σ cod='BD' Prova)
+P11 = γ count(nr)->cntAlunos Aluno
+P12 = γ curso; count(cod)->numeroCursos (Cadeira)
+P13 = γ nr; count(cod)->numeroProvas (Prova)
+P14 = 
+P14
