@@ -13,5 +13,16 @@ P10 = γ avg(nota)->avgNota (σ cod='BD' Prova)
 P11 = γ count(nr)->cntAlunos Aluno
 P12 = γ curso; count(cod)->numeroCursos (Cadeira)
 P13 = γ nr; count(cod)->numeroProvas (Prova)
-P14 = 
-P14
+P14 = γ avg(numeroProvas)->avgNumProvas (γ nr; count(cod)->numeroProvas (Prova))
+P15 = π Nome,avgNota (Aluno⨝(γ nr; avg(nota)->avgNota (σ nota>=10 Prova)))
+P16a = γ cod; max(nota)->nota (Prova)
+P16 = π cod, Nome, nota (Aluno⨝(γ cod,nota; min(nr)->nr (P16a⨝Prova)))
+P17a = π nr,cod (σ nota >= 10 Prova)
+P17b = π cod,curso Cadeira
+P17c = P17a⨝P17b
+P17d = γ nr,curso; count(cod)->nCadeiras P17c
+P17e = γ curso; count(cod)->nCadeirasCurso Cadeira
+P17f = P17d⨝P17e
+P17g = (σ nCadeiras=nCadeirasCurso P17f)⨝Aluno
+P17 = τ curso (π Nome,curso P17g)
+P17
