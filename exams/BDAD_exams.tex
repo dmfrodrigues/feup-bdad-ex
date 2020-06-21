@@ -1,0 +1,26 @@
+\documentclass{bdad}
+\usepackage[portuguese]{babel}
+\title{BDAD exercícios resolvidos -- Exames}
+\author{Diogo Miguel Ferreira Rodrigues (dmfrodrigues2000@gmail.com)}
+\date{}
+\setcounter{tocdepth}{1}
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries}{}{0pt}{\Huge}
+%
+\usepackage{import}
+\makeatletter
+\renewcommand{\l@section}{\@dottedtocline{1}{1.5em}{2.6em}}
+\renewcommand{\l@subsection}{\@dottedtocline{2}{4.0em}{3.6em}}
+\renewcommand{\l@subsubsection}{\@dottedtocline{3}{7.4em}{4.5em}}
+\makeatother
+% Document
+\begin{document}
+\begingroup
+\maketitle
+    \let\clearpage\relax
+	\tableofcontents
+\endgroup
+\import{./2016N/}{2016N.tex}
+\end{document}
