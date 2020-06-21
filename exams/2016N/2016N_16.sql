@@ -12,5 +12,4 @@ AND ID IN (
     -- Estudantes com amigos
     SELECT ID1 FROM Amizade
 )
-ORDER BY anoCurricular, nome
-;
+ORDER BY anoCurricular, nome;
