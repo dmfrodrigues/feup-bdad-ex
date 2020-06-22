@@ -50,6 +50,13 @@ Em LDD-SQL, \texttt{FOREIGN KEY} e \texttt{REFERENCES} são
 
 \section{Pergunta 5}
 ?
+\begin{enumerate}[label=\alph*.]\itemsep0em
+    \item Não quero responder
+    \item só quando se utiliza o \texttt{SELECT}
+    \item \textbf{em geral mas ocupa algum espaço em disco \greencheckmark}
+    \item sempre
+    \item só quando se utiliza o \texttt{UPDATE}
+\end{enumerate}
 
 \section{Pergunta 6}
 O SQL embebido permite
@@ -101,6 +108,7 @@ Para avaliar a capacidade preditiva de um modelo, é preciso definir os seguinte
     \item algoritmo e forma de utilização dos dados para estimar o valor da medida de avaliação
 \end{enumerate}
 
+\newpage
 \section*{Informação}
 Considere o esquema relacional $R(A,B,C,D,E,F,G,H)$ e as seguintes dependências funcionais:
 \begin{alignat*}{2}
@@ -135,6 +143,7 @@ Uma relação está na forma normal de Boyce-Codd (BCNF) sse, para toda a depend
 
 Dado que $\{B\}^+ = \{B,E\}^+ = \{B,C,E\}^+ = \{B,C,E\}$, $\{B\}$ não é uma superchave porque o seu fecho não inclui todos os atributos. Assim, a relação $R$ não está na BCNF.
 
+\newpage
 \section{Pergunta 13}
 Construa um modelo concetual de dados em UML para armazenar a informação associada à realização de uma conferência científica. Indique todas as restrições consideradas importantes para a construção da base de dados.
 
@@ -154,8 +163,11 @@ Finalmente, pretende-se também registar as sessões da conferência e as salas 
 
 \ansseparator
 
-TODO
+\begin{center}
+    \includegraphics[scale=0.246]{2016R_13.png}
+\end{center}
 
+\newpage
 \section*{Informação}
 Os estudantes da FEUP decidiram organizar a sua rede social usando uma base de dados com o seguinte modelo relacional:
 
@@ -211,6 +223,7 @@ Liste o nome dos estudantes com amigos em todos os anos curriculares.
 \end{tabular} \end{center}
 \lstinputlisting[language=SQL]{2016R_16.sql}
 
+\newpage
 \section{Pergunta 17}
 Considere que, para todos os casos em que A é amigo de B e B é amigo de C, A é amigo de C. Crie uma tabela chamada AmizadeTransitiva que contenha estas novas relações de amizade. Não adicione amizades duplicadas, amizades que já existem na tabela Amizade ou auto-amizades.
 
@@ -280,6 +293,7 @@ No final, a tabela AmizadeTransitiva deverá conter os seguintes tuplos:
 \end{center}
 \lstinputlisting[language=SQL]{2016R_17.sql}
 
+\newpage
 \section{Pergunta 18}
 Liste todos os pares de amigos de cursos diferentes. A listagem não deve conter pares repetidos, nem pares simétricos. Se contiver o par (Miguel, Nuno) não deve ter o par (Nuno, Miguel).
 \begin{center} \begin{tabular}{l l}
