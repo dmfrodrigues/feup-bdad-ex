@@ -1,0 +1,8 @@
+DROP TRIGGER IF EXISTS AutoLike;
+
+CREATE TRIGGER AutoLike AFTER INSERT ON AppearsIn
+FOR EACH ROW
+BEGIN
+    INSERT INTO Likes(user, photo)
+    SELECT user, photo FROM New;
+END;
