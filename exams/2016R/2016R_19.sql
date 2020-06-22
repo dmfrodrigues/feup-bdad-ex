@@ -1,0 +1,21 @@
+DROP TRIGGER IF EXISTS AmizadeInsert;
+DROP TRIGGER IF EXISTS AmizadeDelete;
+DROP TRIGGER IF EXISTS AmizadeUpdate;
+
+CREATE TRIGGER AmizadeInsert AFTER INSERT ON Amizade
+FOR EACH ROW BEGIN
+    INSERT INTO Amizade
+    SELECT ID2 AS ID1, ID1 AS ID2 FROM New;
+END;
+
+CREATE TRIGGER AmizadeDelete AFTER DELETE ON Amizade
+FOR EACH ROW BEGIN
+    DELETE FROM Amizade
+    WHERE ID2=Old.ID1 AND ID1=Old.ID2;
+END;
+
+CREATE TRIGGER AmizadeUpdate BEFORE UPDATE ON Amizade
+BEGIN
+    SELECT raise(rollback, 'Amizade table can not be updated');
+END;
+
