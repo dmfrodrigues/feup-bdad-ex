@@ -7,24 +7,26 @@
 \RequirePackage[top=25mm,bottom=25mm,left=25mm,right=25mm]{geometry}
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
-\usepackage{amsmath}
-\usepackage{graphicx}
-\usepackage{enumitem}
-\usepackage{amssymb,graphicx}
-\usepackage[retain-explicit-plus,retain-zero-exponent]{siunitx}
-\usepackage{hyperref}
-\usepackage{tikz}
-\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{enumitem}
+\RequirePackage{amssymb,graphicx}
+\RequirePackage[retain-explicit-plus,retain-zero-exponent]{siunitx}
+\RequirePackage{hyperref}
+\RequirePackage{longtable}
+\RequirePackage{tikz}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+\newcommand\greencheckmark{{\color{green}\checkmark}}
 
 \newcommand\naturaljoin{\bowtie}
 % Entire row is bold
-\usepackage{tabularx}
+\RequirePackage{tabularx}
 \newcommand\setrow[1]{\gdef\rowmac{#1}#1\ignorespaces}
 \newcommand\clearrow{\global\let\rowmac\relax}
 \clearrow
 % Listings
-\usepackage{xcolor}
-\usepackage{listings}
+\RequirePackage{xcolor}
+\RequirePackage{listings}
 \renewcommand{\lstlistingname}{File}
 \lstset{
     basicstyle=\ttfamily,

@@ -11,9 +11,10 @@
 %
 \usepackage{import}
 \makeatletter
-\renewcommand{\l@section}{\@dottedtocline{1}{1.5em}{2.6em}}
-\renewcommand{\l@subsection}{\@dottedtocline{2}{4.0em}{3.6em}}
-\renewcommand{\l@subsubsection}{\@dottedtocline{3}{7.4em}{4.5em}}
+\renewcommand{\l@chapter}{\bfseries\@dottedtocline{0}{0em}{2.5em}}
+\renewcommand{\l@section}{\normalfont\@dottedtocline{1}{1.5em}{3.5em}}
+\renewcommand{\l@subsection}{\normalfont\@dottedtocline{2}{4.0em}{3.6em}}
+\renewcommand{\l@subsubsection}{\normalfont\@dottedtocline{3}{7.4em}{4.5em}}
 \makeatother
 % Document
 \begin{document}
@@ -23,4 +24,5 @@
 	\tableofcontents
 \endgroup
 \import{./2016N/}{2016N.tex}
+\import{./2016R/}{2016R.tex}
 \end{document}
