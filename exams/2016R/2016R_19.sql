@@ -18,4 +18,3 @@ CREATE TRIGGER AmizadeUpdate BEFORE UPDATE ON Amizade
 BEGIN
     SELECT raise(rollback, 'Amizade table can not be updated');
 END;
-
