@@ -3,6 +3,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 ![docs](https://github.com/dmfrodrigues/feup-bdad-ex/workflows/docs/badge.svg)
+![docs-additional](https://github.com/dmfrodrigues/feup-bdad-ex/workflows/docs-additional/badge.svg)
 
 - **Institution:** [FEUP](https://sigarra.up.pt/feup/en/web_page.Inicial)
 - **Course:** [BDAD](https://sigarra.up.pt/feup/en/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=436439) (Databases)

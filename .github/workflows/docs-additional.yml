@@ -1,0 +1,17 @@
+name: docs-additional
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install latex
+      run: sudo apt install -y latexmk texlive-latex-extra texlive-science texlive-lang-portuguese
+
+    - name: Compile additional
+      run: make extra

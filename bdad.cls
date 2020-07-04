@@ -4,7 +4,7 @@
 \LoadClass[a4paper]{book}
 \raggedbottom
 
-\RequirePackage[top=25mm,bottom=25mm,left=25mm,right=25mm]{geometry}
+\RequirePackage[top=35mm,bottom=35mm,left=25mm,right=25mm]{geometry}
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{amsmath}
@@ -40,3 +40,15 @@
 }
 % Answer separator
 \newcommand\ansseparator{\noindent\hfil\rule{0.5\textwidth}{.4pt}\hfil}
+% Some work
+\def\title#1{\gdef\@title{#1}\gdef\@@title{#1}}
+\def\author#1{\gdef\@author{#1}\gdef\@@author{#1}}
+\let\@@title\@empty
+\let\@@author\@empty
+% Headers and footers
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\ifx\@@title\@empty\else\@@title\fi}
+\fancyfoot[L]{\ifx\@@author\@empty\else\@@author\fi}
+\fancyfoot[R]{\thepage}
