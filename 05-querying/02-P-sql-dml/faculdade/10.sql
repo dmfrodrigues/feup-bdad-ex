@@ -1,0 +1,1 @@
+SELECT AVG(nota) FROM Prova WHERE cod='BD';

@@ -1,0 +1,1 @@
+SELECT Nome, avgNota FROM (SELECT Nome, nr, AVG(nota) AS avgNota FROM (Prova NATURAL JOIN Aluno) GROUP BY nr);

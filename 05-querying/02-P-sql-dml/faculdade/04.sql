@@ -1,0 +1,1 @@
+SELECT DISTINCT Nome from Aluno EXCEPT SELECT Nome FROM Prof;

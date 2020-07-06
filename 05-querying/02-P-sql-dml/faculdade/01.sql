@@ -1,0 +1,1 @@
+SELECT nr FROM Aluno;
