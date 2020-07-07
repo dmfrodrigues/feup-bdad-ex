@@ -11,6 +11,7 @@ extra: $(OUTFILES_EXTRA)
 
 test: FORCE
 	make -C 04-sql-ddl test
+	make -C 05-querying test
 
 clean:
 	cd exams && latexmk -C
