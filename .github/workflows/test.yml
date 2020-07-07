@@ -1,0 +1,27 @@
+name: test
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+
+    - name: Update apt index
+      run: sudo apt update
+
+    - name: Install sqlite3
+      run: sudo apt install -y sqlite3
+
+    - name: Change permissions
+      run: sudo chmod u+x *.sh
+
+    - name: Test
+      run: make test

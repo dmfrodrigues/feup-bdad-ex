@@ -9,8 +9,10 @@ extra: $(OUTFILES_EXTRA)
 %.pdf: %.tex
 	cd $(<D) && $(LATEX) $(<F)
 
+test: FORCE
+	make -C 04-sql-ddl test
+
 clean:
 	cd exams && latexmk -C
 
-cleanall:
-	git clean -dfX
+FORCE:
