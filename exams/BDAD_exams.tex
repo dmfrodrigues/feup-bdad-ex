@@ -1,8 +1,8 @@
 \documentclass{bdad}
 \usepackage[portuguese]{babel}
-\title{BDAD exercícios resolvidos -- Exames}
-\author{Diogo Miguel Ferreira Rodrigues (dmfrodrigues2000@gmail.com)}
-\date{}
+\title{BDAD -- exames resolvidos}
+\author{Diogo Miguel Ferreira Rodrigues (\href{mailto:dmfrodrigues2000@gmail.com}{dmfrodrigues2000@gmail.com})}
+\date{2019/20, 2º semestre}
 \setcounter{tocdepth}{1}
 
 \usepackage{titlesec}
@@ -19,11 +19,18 @@
 \makeatother
 % Document
 \begin{document}
-\begingroup
 \maketitle
-    \let\clearpage\relax
-	\tableofcontents
-\endgroup
+\begin{secondpage}
+    Copyright \copyright 2020--\the\year\ Diogo Rodrigues\par
+    \IfFileExists{VERSION}{Versão \input{VERSION}}{Versão de rascunho}\par
+    \immediate\write18{../get-commit-info.sh > COMMIT.tex}
+    Compilado em \today~\currenttime~de \href{https://github.com/dmfrodrigues/feup-sope-exam}{dmfrodrigues/feup-sope-exam}, commit \input{COMMIT}\unskip.\par
+    É permitida a cópia e distribuição deste documento sob os termos da licença pública
+    \href{https://creativecommons.org/licenses/by-nc-nd/4.0/}{Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International}.
+\end{secondpage}
+\frontmatter
+\tableofcontents
+\mainmatter
 \import{./2015N/}{BDAD_2015N.tex}
 \import{./2016N/}{BDAD_2016N.tex}
 \import{./2016R/}{BDAD_2016R.tex}

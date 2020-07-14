@@ -1,4 +1,4 @@
-LATEX=latexmk -f -interaction=nonstopmode -pdf
+LATEX=latexmk -f -interaction=nonstopmode --shell-escape -pdf
 
 all: exams/BDAD_exams.pdf
 
