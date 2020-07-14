@@ -1,0 +1,36 @@
+\documentclass{bdad}
+\usepackage{import}
+\usepackage{standalone}
+\usepackage[english]{babel}
+\usepackage[yyyymmdd,hhmmss]{datetime}
+\renewcommand{\dateseparator}{-}
+% Metadata
+\title{BDAD -- solved tests}
+\author{Diogo Miguel Ferreira Rodrigues (\href{mailto:dmfrodrigues2000@gmail.com}{dmfrodrigues2000@gmail.com})}
+\date{2019/20, 2nd semester}
+\setcounter{tocdepth}{2}
+%
+\makeatletter
+\renewcommand{\l@chapter}{\bfseries\@dottedtocline{0}{0em}{2.5em}}
+\renewcommand{\l@section}{\normalfont\@dottedtocline{1}{1.5em}{3.5em}}
+\renewcommand{\l@subsection}{\normalfont\@dottedtocline{2}{4.0em}{3.6em}}
+\renewcommand{\l@subsubsection}{\normalfont\@dottedtocline{3}{7.4em}{4.5em}}
+\makeatother
+% Document
+\begin{document}
+\maketitle
+\begin{secondpage}
+    Copyright \copyright 2020--\the\year\ Diogo Rodrigues\par
+    \IfFileExists{VERSION}{Version \input{VERSION}}{Draft version}\par
+    \immediate\write18{../get-commit-info.sh > COMMIT.tex}
+    Built on \today~\currenttime~from \href{https://github.com/dmfrodrigues/feup-bdad-ex}{dmfrodrigues/feup-bdad-ex}, commit \input{COMMIT}\unskip.\par
+    Permission is granted to copy and distribute this document under the terms of the
+    \href{https://creativecommons.org/licenses/by-nc-nd/4.0/}{Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International}
+    public license.
+\end{secondpage}
+\frontmatter
+\tableofcontents
+\mainmatter
+\import{./2020/}{BDAD_2020T.tex}
+
+\end{document}
