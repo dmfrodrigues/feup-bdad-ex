@@ -6,7 +6,7 @@
 \renewcommand{\thechapter}{\arabic{chapter}N}
 \setcounter{chapter}{15}
 \exam{Exame normal 2015/16}
-\section{Pergunta 1}
+\question{Pergunta 1}
 Uma associação reflexiva representa:
 \begin{enumerate}[label=\alph*.]\itemsep0em
     \item uma associação que representa uma relação ``é um''/``é uma''
@@ -16,7 +16,7 @@ Uma associação reflexiva representa:
     \item uma associação entre uma classe e a sua super-classe
 \end{enumerate}
 
-\section{Pergunta 2}
+\question{Pergunta 2}
 Se a 3ª Forma Normal pode ser descrita como ``cada atributo depende da chave, de toda a chave e de nada além da chave'', a 1FN seria descrita como:
 \begin{enumerate}[label=\alph*.]\itemsep0em
     \item cada atributo depende da chave e de nada para além da chave
@@ -26,7 +26,7 @@ Se a 3ª Forma Normal pode ser descrita como ``cada atributo depende da chave, d
     \item cada atributo dependen de nada para além da chave
 \end{enumerate}
 
-\section{Pergunta 3}
+\question{Pergunta 3}
 Qual a expressão em álgebra relacional equivalente à seguinte consulta SQL:
 \begin{lstlisting}[language=SQL]
 SELECT c1, MAX(c2) FROM T1 NATURAL JOIN T2 WHERE c3=5 GROUP BY c1;
@@ -39,7 +39,7 @@ SELECT c1, MAX(c2) FROM T1 NATURAL JOIN T2 WHERE c3=5 GROUP BY c1;
     \item $\text{MAX}_{c2}(\pi_{c1}(\sigma_{c3=5}(T1) \naturaljoin T2))$
 \end{enumerate}
 
-\section{Pergunta 4}
+\question{Pergunta 4}
 Tendo a chave primária já definida, como se define uma segunda chave candidata em LDD-SQL?
 \begin{enumerate}[label=\alph*.]\itemsep0em
     \item Não quero responder
@@ -49,7 +49,7 @@ Tendo a chave primária já definida, como se define uma segunda chave candidata
     \item Com uma das cláusulas \texttt{PRIMARY KEY} ou \texttt{UNIQUE}
 \end{enumerate}
 
-\section{Pergunta 5}
+\question{Pergunta 5}
 Uma vista
 \begin{enumerate}[label=\alph*.]\itemsep0em
     \item pode ser usada como qualquer tabela
@@ -59,7 +59,7 @@ Uma vista
     \item só pode ser usada como tabela de for materializada
 \end{enumerate}
 
-\section{Pergunta 6}
+\question{Pergunta 6}
 As linguagens PSM:
 \begin{enumerate}[label=\alph*.]\itemsep0em
     \item permitem que o sistema de gestão de bases de dados execute código escrito em linguagens de programação (ex. C, Java)
@@ -69,7 +69,7 @@ As linguagens PSM:
     \item permitem usar instruções de linguagens de programação (ex. C, Java) em \texttt{SELECT}s
 \end{enumerate}
 
-\section{Pergunta 7}
+\question{Pergunta 7}
 Um ponto de verificação (checkpoint) serve para:
 \begin{enumerate}[label=\alph*.]\itemsep0em
     \item Não quero responder
@@ -79,7 +79,7 @@ Um ponto de verificação (checkpoint) serve para:
     \item determinar quais as transações ainda incompletas
 \end{enumerate}
 
-\section{Problema 8}
+\question{Problema 8}
 A forma tradicional de implementar escalabilidade dos servidores de base de dados:
 \begin{enumerate}[label=\alph*.]\itemsep0em
     \item é a vertical, que consiste implementação de vários níveis de servidores para armazenar todos os dados
@@ -89,7 +89,7 @@ A forma tradicional de implementar escalabilidade dos servidores de base de dado
     \item \textbf{é a vertical, que consiste na compra de hardware mais poderoso para armazenar todos os dados \greencheckmark}
 \end{enumerate}
 
-\section{Problema 9}
+\question{Problema 9}
 Uma diferença essencial entre uma base de dados e um armazém de dados é que
 \begin{enumerate}[label=\alph*.]\itemsep0em
     \item ambos optimizam a velocidade de acesso de formas diferentes: a primeira minimiza a redundância enquanto o segundo a maximiza
@@ -99,7 +99,7 @@ Uma diferença essencial entre uma base de dados e um armazém de dados é que
     \item a primeira maximiza a redundância enquanto que o segundo a minimiza para otimizar a velocidade de consulta
 \end{enumerate}
 
-\section{Pergunta 10}
+\question{Pergunta 10}
 A avaliação do desempenho de um algoritmo num problema de previsão, costuma envolver a divisão dos dados em
 \begin{enumerate}[label=\alph*.]\itemsep0em
     \item 10 sub-conjuntos, 5 para obter o modelo e os restantes para medir o seu desempenho preditivo
@@ -109,7 +109,7 @@ A avaliação do desempenho de um algoritmo num problema de previsão, costuma e
     \item Não quero responder
 \end{enumerate}
 
-\section*{Informação}
+\information{Informação}
 Considere o esquema relacional $R(A,B,C,D,E,F,G,H)$ e as seguintes dependências funcionais:
 \begin{alignat*}{2}
     & A,B,C && \rightarrow D,G,H\\
@@ -118,7 +118,7 @@ Considere o esquema relacional $R(A,B,C,D,E,F,G,H)$ e as seguintes dependências
     & G     && \rightarrow H    
 \end{alignat*}
 
-\section{Pergunta 11}
+\question{Pergunta 11}
 Qual das seguintes dependências funcionais não pode ser obtida?
 \begin{enumerate}[label=\alph*.]\itemsep0em
     \item \label{itm:2016N-11-a} $A,F,C \rightarrow D$
@@ -132,7 +132,7 @@ O item \ref{itm:2016N-11-b} é possível se considerarmos $\{A,F\}^+=\{A,B,F\}^+
 O item \ref{itm:2016N-11-d} não é possível dado que $\{A,F\}^+=\{A,B,F\}^+=\{A,B,E,F\}^+=\{A,B,E,F\}$.\\
 O item \ref{itm:2016N-11-e} é possível dado que é trivial.
 
-\section{Pergunta 12}
+\question{Pergunta 12}
 Verifique se a relação $R$ se encontra na forma normal de Boyce-Codd. Justifique.
 
 \ansseparator
@@ -141,7 +141,7 @@ Uma relação está na forma normal de Boyce-Codd (BCNF) sse, para toda a depend
 
 Dado que $\{G\}^+=\{G,H\}^+=\{G,H\}$, pode-se verificar que $\{G\}$ não é uma superchave, dado que o seu fecho $\{G\}^+=\{G,H\}$ não inclui todos os atributos. Assim, $R$ não está na BCNF.
 
-\section{Pergunta 13}
+\question{Pergunta 13}
 Construa um modelo concetual de dados em UML para armazenar a informação associada a uma rede de lojas comerciais. Indique todas as restrições que possam ser úteis para a construção da base de dados.
 
 Os responsáveis por uma rede de lojas comerciais pretendem construir um sistema informático para gerir toda a informação associada às lojas, aos produtos, aos fornecedores e aos clientes. O sistema deve permitir registar informação sobre os produtos, nomeadamente o nome, uma descrição, o preço de venda atual (que é o mesmo em todas as lojas), e a categoria do produto (p.e. alimentação, limpeza, congelados, etc). Importa também permitir o registo dos diversos fornecedores que disponibilizam cada um dos produtos, bem como o preço praticado por cada um. Cada produto pode ser disponibilizado por mais do que um fornecedor.
@@ -157,7 +157,7 @@ Sobre cada loja, deve ser possível registar, para além dos contactos e localiz
 \end{center}
 
 \newpage
-\section*{Informação}
+\information{Informação}
 
 Os estudantes da FEUP decidiram organizar a sua rede social usando uma base de dados com o seguinte modelo relacional:
 
@@ -179,7 +179,7 @@ Para cada interrogação é apresentada a resposta esperada para a base de dados
 .width <num caracteres coluna 1> <num caracteres coluna 2>...
 \end{lstlisting}
 
-\section{Pergunta 14}
+\question{Pergunta 14}
 Liste o nome de cada estudante inscrito no 3º ano curricular, seguido do nome do curso em que está inscrito.
 \begin{center} \begin{tabular}{l | l}
     \textbf{Estudante} & \textbf{Curso} \\ \hline
@@ -191,7 +191,7 @@ Liste o nome de cada estudante inscrito no 3º ano curricular, seguido do nome d
 \ansseparator
 \lstinputlisting[language=SQL]{2016N_14.sql}
 
-\section{Pergunta 15}
+\question{Pergunta 15}
 Liste o nome dos estudantes com mais de 3 amigos.
 \begin{center} \begin{tabular}{l}
     \textbf{nome}    \\ \hline
@@ -201,7 +201,7 @@ Liste o nome dos estudantes com mais de 3 amigos.
 \end{tabular} \end{center}
 \lstinputlisting[language=SQL]{2016N_15.sql}
 
-\section{Pergunta 16}
+\question{Pergunta 16}
 Liste o nome e ano curricular dos estudantes que só têm amigos do mesmo ano curricular. Devolva os resultados ordernados por ano curricular e depois por nome dentro de cada ano curricular. Não devem ser devolvidos os estudantes que não têm amigos.
 \begin{center} \begin{tabular}{l | l}
     \textbf{Nome}    & \textbf{Ano Curricular} \\ \hline
@@ -212,7 +212,7 @@ Liste o nome e ano curricular dos estudantes que só têm amigos do mesmo ano cu
 \end{tabular} \end{center}
 \lstinputlisting[language=SQL]{2016N_16.sql}
 
-\section{Pergunta 17}
+\question{Pergunta 17}
 Liste os identificadores dos amigos em 3º grau do Miguel Sampaio. Um amigo em 3º grau é um amigo de um amigo de um amigo. A listagem não deve ter tuplos repetidos.
 \begin{center} \begin{tabular}{l}
     \textbf{ID} \\ \hline
@@ -223,7 +223,7 @@ Liste os identificadores dos amigos em 3º grau do Miguel Sampaio. Um amigo em 3
 \end{tabular} \end{center}
 \lstinputlisting[language=SQL]{2016N_17.sql}
 
-\section{Pergunta 18}
+\question{Pergunta 18}
 Indique o nome e ano curricular do(s) estudante(s) que tem o maior número de amigos.
 \begin{center} \begin{tabular}{l | l}
     \textbf{nome} & \textbf{anoCurricular} \\ \hline
@@ -231,7 +231,7 @@ Indique o nome e ano curricular do(s) estudante(s) que tem o maior número de am
 \end{tabular} \end{center}
 \lstinputlisting[language=SQL]{2016N_18.sql}
 
-\section{Pergunta 19}
+\question{Pergunta 19}
 Crie um gatilho que, na inserção de um estudante, o torne amigo de todos os outros estudantes do mesmo curso. Não se esqueça que as amizades são mútuas. As amizades inseridas devem ser apenas entre pessoas distintas, ou seja, um estudante não pode ser considerado amigo de si próprio.
 \lstinputlisting[language=SQL]{2016N_19.sql}
 

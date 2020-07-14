@@ -98,5 +98,6 @@
 \newcommand\exam[1]{\chapter{#1}}
 \newcommand\exampart[1]{\section{#1}}
 \newcommand\question[1]{\subsection{#1}}
+\newcommand\information[1]{\subsection*{#1}}
 \newcommand\questionitem[1]{\subsubsection{#1}}
 

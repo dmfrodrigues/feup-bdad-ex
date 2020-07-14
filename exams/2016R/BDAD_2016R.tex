@@ -6,7 +6,7 @@
 \renewcommand{\thechapter}{\arabic{chapter}R}
 \setcounter{chapter}{15}
 \exam{Exame recurso 2015/16}
-\section{Pergunta 1}
+\question{Pergunta 1}
 Uma hierarquia de classes representa:
 \begin{enumerate}[label=\alph*.]\itemsep0em
     \item Não quero responder
@@ -17,7 +17,7 @@ Uma hierarquia de classes representa:
 \end{enumerate}
 Numa hierarquia de classes, a relação distintiva é a especialização (linha contínua com seta aberta branca), não a composição (linha contínua com seta fechada, e losango preto)
 
-\section{Pergunta 2}
+\question{Pergunta 2}
 A relação \texttt{Empresa(códigoEmpresa, NumeroIdentificaçãoFiscal, NomeEMorada, RamoAtividade)} não está na 1FN porque:
 \begin{enumerate}[label=\alph*.]\itemsep0em
     \item nem todos os atributos dependem da chave
@@ -28,7 +28,7 @@ A relação \texttt{Empresa(códigoEmpresa, NumeroIdentificaçãoFiscal, NomeEMo
 \end{enumerate}
 \texttt{NomeEMorada} não é atómico, dado que semanticamente é composto pelo par \texttt{(Nome, Morada)}.
 
-\section{Pergunta 3}
+\question{Pergunta 3}
 Qual a expressão em álgebra relacional equivalente à seguinte consulta SQL:
 \begin{lstlisting}[language=SQL]
 SELECT a FROM T1 JOIN T2 WHERE T1.a > T2.b AND c=-1;
@@ -42,7 +42,7 @@ SELECT a FROM T1 JOIN T2 WHERE T1.a > T2.b AND c=-1;
 \end{enumerate}
 $\pi_{a}(\sigma_{T1.a > T2.b \wedge c=-1}(T1 \naturaljoin T2))$, que é equivalente a $\pi_{a}(\sigma_{c=-1}(T1 \naturaljoin_{T1.a > T2.b} T2))$
 
-\section{Pergunta 4}
+\question{Pergunta 4}
 Em LDD-SQL, \texttt{FOREIGN KEY} e \texttt{REFERENCES} são
 \begin{enumerate}[label=\alph*.]\itemsep0em
     \item a forma de definir uma chave externa e um campo referência, respetivamente
@@ -52,7 +52,7 @@ Em LDD-SQL, \texttt{FOREIGN KEY} e \texttt{REFERENCES} são
     \item a forma de definir uma chave externa e uma chave candidata, respetivamente
 \end{enumerate}
 
-\section{Pergunta 5}
+\question{Pergunta 5}
 ?
 \begin{enumerate}[label=\alph*.]\itemsep0em
     \item Não quero responder
@@ -62,7 +62,7 @@ Em LDD-SQL, \texttt{FOREIGN KEY} e \texttt{REFERENCES} são
     \item só quando se utiliza o \texttt{UPDATE}
 \end{enumerate}
 
-\section{Pergunta 6}
+\question{Pergunta 6}
 O SQL embebido permite
 \begin{enumerate}[label=\alph*.]\itemsep0em
     \item \textbf{a implementação de tarefas parcialmente em SQL e parcialmente na linguagem hospedeira, com troca de informação em variáveis partilhadas \greencheckmark}
@@ -72,7 +72,7 @@ O SQL embebido permite
     \item implementação de tarefas totalmente na linguagem hospedeira, que acede à informação de que necessita através da execução de comandos em SQL
 \end{enumerate}
 
-\section{Pergunta 7}
+\question{Pergunta 7}
 Um escalonamento recuperável sobre um conjunto de transações
 \begin{enumerate}[label=\alph*.]\itemsep0em
     \item não gera bloqueios
@@ -82,7 +82,7 @@ Um escalonamento recuperável sobre um conjunto de transações
     \item Não quero responder
 \end{enumerate}
 
-\section{Pergunta 8}
+\question{Pergunta 8}
 Uma base de dados NoSQL do tipo ``key value store'' consiste:
 \begin{enumerate}[label=\alph*.]\itemsep0em
     \item numa estrutura organizada por colunas
@@ -92,7 +92,7 @@ Uma base de dados NoSQL do tipo ``key value store'' consiste:
     \item \textbf{simplemente numa tabela com 2 colunas, a chave e o valor respetivo \greencheckmark}
 \end{enumerate}
 
-\section{Pergunta 9}
+\question{Pergunta 9}
 O esquema dos dados numa base de dados relacional e num data warehouse é de natureza diferente, nomeadamente relacional e multidimensional:
 \begin{enumerate}[label=\alph*.]\itemsep0em
     \item \textbf{mas, tipicamente, são ambas implementadas com software de gestão de bases de dados relacionais \greencheckmark}
@@ -102,7 +102,7 @@ O esquema dos dados numa base de dados relacional e num data warehouse é de nat
     \item mas podem ser ambas implementadas com software de gestão de bases de dados relacionais e multidimensionais
 \end{enumerate}
 
-\section{Pergunta 10}
+\question{Pergunta 10}
 Para avaliar a capacidade preditiva de um modelo, é preciso definir os seguintes aspetos:
 \begin{enumerate}[label=\alph*.]\itemsep0em
     \item Não quero responder
@@ -113,7 +113,7 @@ Para avaliar a capacidade preditiva de um modelo, é preciso definir os seguinte
 \end{enumerate}
 
 \newpage
-\section*{Informação}
+\information{Informação}
 Considere o esquema relacional $R(A,B,C,D,E,F,G,H)$ e as seguintes dependências funcionais:
 \begin{alignat*}{2}
     & A, B, C && \rightarrow D, G, H \\
@@ -124,7 +124,7 @@ Considere o esquema relacional $R(A,B,C,D,E,F,G,H)$ e as seguintes dependências
     & D       && \rightarrow F
 \end{alignat*}
 
-\section{Pergunta 11}
+\question{Pergunta 11}
 Qual das seguintes dependências funcionais não pode ser obtida?
 \begin{enumerate}[label=\alph*.]\itemsep0em
     \item \label{itm:2016R-11-a} $A, E \rightarrow G$
@@ -138,7 +138,7 @@ O item \ref{itm:2016R-11-b} é possível se considerarmos $\{B,C,D\}^+ = \{B,C,D
 O item \ref{itm:2016R-11-c} não é possível dado que $\{A,C\}^+ = \{A,C\}$.\\
 O item \ref{itm:2016R-11-d} é possível se considerarmos $\{A,C,D\}^+ = \{A,C,D,F\}^+ = \{A,C,D,F,H\}^+$.
 
-\section{Pergunta 12}
+\question{Pergunta 12}
 Verifique se a relação $R$ se encontra na forma normal de Boyce-Codd. Justifique.
 
 \ansseparator
@@ -148,7 +148,7 @@ Uma relação está na forma normal de Boyce-Codd (BCNF) sse, para toda a depend
 Dado que $\{B\}^+ = \{B,E\}^+ = \{B,C,E\}^+ = \{B,C,E\}$, $\{B\}$ não é uma superchave porque o seu fecho não inclui todos os atributos. Assim, a relação $R$ não está na BCNF.
 
 \newpage
-\section{Pergunta 13}
+\question{Pergunta 13}
 Construa um modelo concetual de dados em UML para armazenar a informação associada à realização de uma conferência científica. Indique todas as restrições consideradas importantes para a construção da base de dados.
 
 Os responsáveis pela organização de uma conferência científica pretendem desenvolver um sistema para organizar toda a informação relativa às pessoas envolvidas no evento, às sessões agendadas, às publicações aceites, aos palestrantes convidados, e às revisões associadas a cada publicação.
@@ -172,7 +172,7 @@ Finalmente, pretende-se também registar as sessões da conferência e as salas 
 \end{center}
 
 \newpage
-\section*{Informação}
+\information{Informação}
 Os estudantes da FEUP decidiram organizar a sua rede social usando uma base de dados com o seguinte modelo relacional:
 
 \begin{lstlisting}[numbers=none]
@@ -193,7 +193,7 @@ Para cada interrogação é apresentada a resposta esperada para a base de dados
 .width <num caracteres coluna 1> < num caracteres coluna 2>...
 \end{lstlisting}
 
-\section{Pergunta 14}
+\question{Pergunta 14}
 Liste o nome de cada estudante inscrito no MIEIC cujo nome contenha a letra `a'.
 \begin{center} \begin{tabular}{l}
     \textbf{Estudante} \\ \hline
@@ -207,7 +207,7 @@ Liste o nome de cada estudante inscrito no MIEIC cujo nome contenha a letra `a'.
 \end{tabular} \end{center}
 \lstinputlisting[language=SQL]{2016R_14.sql}
 
-\section{Pergunta 15}
+\question{Pergunta 15}
 Liste o nome de todos os estudantes que são amigos de alguém cujo nome comece por Gabriel.
 \begin{center} \begin{tabular}{l}
     \textbf{nome}    \\ \hline
@@ -219,7 +219,7 @@ Liste o nome de todos os estudantes que são amigos de alguém cujo nome comece 
 \end{tabular} \end{center}
 \lstinputlisting[language=SQL]{2016R_15.sql}
 
-\section{Pergunta 16}
+\question{Pergunta 16}
 Liste o nome dos estudantes com amigos em todos os anos curriculares.
 \begin{center} \begin{tabular}{l}
     \textbf{Nome}    \\ \hline
@@ -228,7 +228,7 @@ Liste o nome dos estudantes com amigos em todos os anos curriculares.
 \lstinputlisting[language=SQL]{2016R_16.sql}
 
 \newpage
-\section{Pergunta 17}
+\question{Pergunta 17}
 Considere que, para todos os casos em que A é amigo de B e B é amigo de C, A é amigo de C. Crie uma tabela chamada AmizadeTransitiva que contenha estas novas relações de amizade. Não adicione amizades duplicadas, amizades que já existem na tabela Amizade ou auto-amizades.
 
 No final, a tabela AmizadeTransitiva deverá conter os seguintes tuplos:
@@ -298,7 +298,7 @@ No final, a tabela AmizadeTransitiva deverá conter os seguintes tuplos:
 \lstinputlisting[language=SQL]{2016R_17.sql}
 
 \newpage
-\section{Pergunta 18}
+\question{Pergunta 18}
 Liste todos os pares de amigos de cursos diferentes. A listagem não deve conter pares repetidos, nem pares simétricos. Se contiver o par (Miguel, Nuno) não deve ter o par (Nuno, Miguel).
 \begin{center} \begin{tabular}{l l}
     \textbf{Nome}    & \textbf{Nome}    \\ \hline
@@ -315,7 +315,7 @@ Liste todos os pares de amigos de cursos diferentes. A listagem não deve conter
 \end{tabular} \end{center}
 \lstinputlisting[language=SQL]{2016R_18.sql}
 
-\section{Pergunta 19}
+\question{Pergunta 19}
 Crie os gatilhos necessários para garantir que a amizade é mútua sempre que haja inserções ou eliminações na tabela \texttt{Amizade}. Crie também um gatilho que impeça atualizações à tabela \texttt{Amizade}.
 \lstinputlisting[language=SQL]{2016R_19.sql}
 

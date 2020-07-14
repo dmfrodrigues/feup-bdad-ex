@@ -7,7 +7,7 @@
 \setcounter{chapter}{14}
 \exam{Exame normal 2014/15}
 
-\section{Pergunta 1} 
+\question{Pergunta 1} 
 No diagrama de classes UML uma classe é:
 \begin{enumerate}[label=\alph*.]\itemsep0em
     \item Nenhuma das outras respostas
@@ -17,10 +17,10 @@ No diagrama de classes UML uma classe é:
     \item \textbf{Um descritor de um conjunto de objetos que partilham as mesmas propriedades; \greencheckmark}
 \end{enumerate}
 
-\section{Pergunta 2}
+\question{Pergunta 2}
 Anulada
 
-\section{Pergunta 3}
+\question{Pergunta 3}
 Diga em que forma normal se encontra o esquema relacional $R(A,B,C,D,E)$ sabendo que contém as seguintes dependências funcionais $DF=\{A \rightarrow C; A,B \rightarrow D,E\}$ e que os 5 atributos são atómicos, i.e., têm domínios singulares?
 \begin{enumerate}[label=\alph*.]\itemsep0em
     \item Não responder.
@@ -35,7 +35,7 @@ Para uma relação estar na 2ª FN, tem que garantir que não tem nenhuma depend
 
 O enunciado garante que todos os atributos são atómicos, logo $R$ está pelo menos na 1ª FN.
 
-\section{Pergunta 4} 
+\question{Pergunta 4} 
 Qual o melhor modo de mapear em LDD-SQL o seguinte diagrama de classes UML?
 \begin{center}
     \includegraphics[scale=0.6]{questions/2015N_02.png}
@@ -89,7 +89,7 @@ CREATE TABLE Socio (
 \end{enumerate}
 
 \newpage
-\section{Pergunta 5}
+\question{Pergunta 5}
 Qual a expressão em álgebra relacional equivalente à seguinte consulta SQL:
 \begin{lstlisting}[language=SQL]
 SELECT a,b FROM T1 NATURAL JOIN (SELECT * FROM T2 WHERE c='Ola')
@@ -102,7 +102,7 @@ SELECT a,b FROM T1 NATURAL JOIN (SELECT * FROM T2 WHERE c='Ola')
     \item $\pi_{c='Ola'}(T1 \naturaljoin \sigma_{a,b}(T2))$
 \end{enumerate}
 
-\section{Pergunta 6}
+\question{Pergunta 6}
 Os triggers do tipo \texttt{INSTEAD OF} são normalmente usados com:
 \begin{enumerate}[label=\alph*.]\itemsep0em
     \item \textbf{Vistas \greencheckmark}
@@ -112,7 +112,7 @@ Os triggers do tipo \texttt{INSTEAD OF} são normalmente usados com:
     \item Não responder.
 \end{enumerate}
 
-\section{Pergunta 7}
+\question{Pergunta 7}
 Nas linguagens PSM um cursor serve para:
 \begin{enumerate}[label=\alph*.]\itemsep0em
     \item Integrar código SQL em linguagens hospedeiras
@@ -122,7 +122,7 @@ Nas linguagens PSM um cursor serve para:
     \item Otimizar queries
 \end{enumerate}
 
-\section{Pergunta 8}
+\question{Pergunta 8}
 Os sistemas de controlo de concorrência por bloqueios caracterizam-se por:
 \begin{enumerate}[label=\alph*.]\itemsep0em
     \item \textbf{Serem menos suscetíveis de abortarem transações que os sistemas baseados em marcas temporais \greencheckmark}
@@ -132,7 +132,7 @@ Os sistemas de controlo de concorrência por bloqueios caracterizam-se por:
     \item Não estarem sujeitos à ocorrência de livelocks
 \end{enumerate}
 
-\section{Pergunta 9}
+\question{Pergunta 9}
 O teorema CAP diz-nos que é impossível a um sistema distribuído garantir simultaneamente as seguintes características:
 \begin{enumerate}[label=\alph*.]\itemsep0em
     \item \textbf{Consistência, disponibilidade e tolerância particional \greencheckmark}
@@ -142,7 +142,7 @@ O teorema CAP diz-nos que é impossível a um sistema distribuído garantir simu
     \item Consistência, isolamento e durabilidade
 \end{enumerate}
 
-\section{Pergunta 10}
+\question{Pergunta 10}
 O esquema em estrela de um armazém de dados caracteriza-se por:
 \begin{enumerate}[label=\alph*.]\itemsep0em
     \item \textbf{Ter uma só tabela de factos cuja chave primária é constituída pelas chaves externas para cada uma das tabelas dimensão do esquema \greencheckmark}
@@ -152,7 +152,7 @@ O esquema em estrela de um armazém de dados caracteriza-se por:
     \item Não ter qualquer referência à dimensão tempo
 \end{enumerate}
 
-\section*{Informação}
+\information{Informação}
 Considere o esquema relacional $R(A,B,C,D,E,F)$ com as seguintes dependências funcionais:
 \begin{alignat*}{2}
     & A    && \rightarrow B    \\
@@ -160,7 +160,7 @@ Considere o esquema relacional $R(A,B,C,D,E,F)$ com as seguintes dependências f
     & A, D && \rightarrow E
 \end{alignat*}
 
-\section{Pergunta 11}
+\question{Pergunta 11}
 Obtenha justificando uma decomposição na 3ª FN.
 
 \ansseparator
@@ -207,7 +207,7 @@ Assim, o resultado final da transformação é o seguinte conjunto de relações
     & R_5 (A, F)
 \end{alignat*}
 
-\section{Pergunta 12}
+\question{Pergunta 12}
 Verifique se as diferentes relações que obteve na decomposição se encontram na forma normal de Boyce-Codd. Justifique.
 
 \ansseparator
@@ -220,7 +220,7 @@ Uma relação $R$ está na forma normal de Boyce-Codd (BCNF) sse, para toda a de
 \end{itemize}
 Assim, as relações obtidas encontram-se na BCNF.
 
-\section{Pergunta 13}
+\question{Pergunta 13}
 Construa um modelo concetual de dados em UML para armazenar a informação mantida pelo Serviço de Informática de uma Faculdade. Indique todas as restrições que possam ser úteis para a construção da base de dados.
 
 Os responsáveis pela gestão do serviço de informática de uma faculdade pretendem manter informação sobre os equipamentos e salas que gerem, as reservas realizadas por utilizadores, o pessoal técnico do serviço; e os pedidos de apoio técnico. O sistema deve permitir registar os detalhes de cada equipamento, nomeadamente a referência, data de aquisição, fornecedor, tipo, entre outros. Cada equipamento pode estar associado a uma sala. Os equipamentos e salas devem ter um técnico responsável associado.
@@ -233,7 +233,7 @@ Os pedidos de apoio técnico podem ser solicitados por qualquer utilizador, estu
 
 TODO
 
-\section*{Informação}
+\information{Informação}
 Decidiu iniciar o desenvolvimento de um sítio web para armazenamento e partilha de fotografias e criou uma base de dados com o seguinte modelo relacional:
 
 \begin{lstlisting}[numbers=none]
@@ -280,7 +280,7 @@ Para cada interrogação é apresentada a resposta esperada para a base de dados
 .width <num caracteres coluna i> <num caracteres coluna 2> ...
 \end{lstlisting}
 
-\section{Pergunta 14}
+\question{Pergunta 14}
 Liste as legendas das fotografias que foram introduzidas pelo Daniel Ramos 2 dias depois de terem sido criadas. Por exemplo, uma fotografia introduzida no dia 6 de junho de 2015 só deve ser devolvida se tiver sido tirada no dia 4 de junho de 2015. [Nota: A interrogação deverá funcionar independentemente do identificador de Daniel Ramos.]
 \begin{center} \begin{tabular}{l}
     \textbf{caption} \\ \hline
@@ -288,7 +288,7 @@ Liste as legendas das fotografias que foram introduzidas pelo Daniel Ramos 2 dia
 \end{tabular} \end{center}
 \lstinputlisting[language=SQL]{2015N_14.sql}
 
-\section{Pergunta 15}
+\question{Pergunta 15}
 Liste o nome dos utilizadores que não introduziram nenhuma fotografia.
 \begin{center} \begin{tabular}{l}
     \textbf{name}     \\ \hline
@@ -302,7 +302,7 @@ Liste o nome dos utilizadores que não introduziram nenhuma fotografia.
 \end{tabular} \end{center}
 \lstinputlisting[language=SQL]{2015N_15.sql}
 
-\section{Pergunta 16}
+\question{Pergunta 16}
 Qual a média de utilizadores que aparecem nas fotografias que têm mais de 3 pessoas a gostar delas.
 \begin{center} \begin{tabular}{l}
     \textbf{Média}     \\ \hline
@@ -310,7 +310,7 @@ Qual a média de utilizadores que aparecem nas fotografias que têm mais de 3 pe
 \end{tabular} \end{center}
 \lstinputlisting[language=SQL]{2015N_16.sql}
 
-\section{Pergunta 17}
+\question{Pergunta 17}
 Liste a legenda das fotografias em que surge o Daniel Ramos ou amigos do Daniel Ramos ou amigos de amigos do Daniel Ramos.
 \begin{center} \begin{tabular}{l}
     \textbf{caption}                 \\ \hline
@@ -325,11 +325,11 @@ Liste a legenda das fotografias em que surge o Daniel Ramos ou amigos do Daniel 
 \end{tabular} \end{center}
 \lstinputlisting[language=SQL]{2015N_17.sql}
 
-\section{Pergunta 18}
+\question{Pergunta 18}
 Apague todas as fotografias introduzidas antes de 01 de janeiro de 2010 em que surjam menos de 2 utilizadores.
 \lstinputlisting[language=SQL]{2015N_18.sql}
 
-\section{Pergunta 19}
+\question{Pergunta 19}
 Crie um gatilho para garantir que, sempre que se insere um registo em AppearsIn referindo que um utilizador aparece numa fotografia, esse utilizador gosta dessa fotografia.
 \lstinputlisting[language=SQL]{2015N_19.sql}
 }
