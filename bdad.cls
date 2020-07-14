@@ -3,9 +3,6 @@
 \LoadClass[a4paper]{book}
 % Margins
 \RequirePackage[top=35mm,bottom=35mm,left=25mm,right=25mm]{geometry}
-% Time and date
-\usepackage[yyyymmdd,hhmmss]{datetime}
-\renewcommand{\dateseparator}{-}
 % Tables with colored cells
 \RequirePackage[table]{xcolor}%
 % Graphics and images
