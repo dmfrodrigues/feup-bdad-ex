@@ -3,6 +3,7 @@
 Uma florista pretende implementar um sistema de informação que guarde as flores e os acessórios que usa em arranjos florais.
 
 Selecionar UML adequado.
+(Não era a opção com quantidade a sair da composição. Era a opção com uma generalização disjoint, complete com o atributo da cor como subclasse de "part")
 
 ## Pergunta 2
 
@@ -30,6 +31,7 @@ Que características é que as dependências funcionais têm que ter para estar 
 
 - As dependências funcionais só podem ter um atributo do lado direito ✖
 - Se B é uma base mínima de uma relação, não pode haver outra base mínima ✖
+- Se removêssemos 1 FD deixaria de ser base mínima. ✔
 
 ## Pergunta 8
 
@@ -50,11 +52,12 @@ Script de criação de base de dados e preenchimento com dados, perguntava o que
 
 ## Pergunta 11
 
-Sobre vistas
+Sobre vistas atualizáveis (ver bibliografia)
 
 ## Pergunta 12
 
 Sobre gatilhos
+Gatilho é depois da Inserção.
 
 ## Pergunta 13
 
@@ -181,8 +184,10 @@ ORDER BY admin_nickname DESC;
 ## Pergunta 18
 
 Quais os posts que têm um número de comentários acima do número médio de comentários por post?
+Número de comentários por post agrupando por id do post, calcular a média, contar o nº de comentários de post e selecionar os que estavam acima da média.
 
 ## Pergunta 19
 
 Para cada administrador mostrar o 1º, 2º e 3º posts mais vistos. Se não houver posts que chegue para mostrar também não se mostra. Se houver dois posts empatados em 1º mostra-se esses dois em primeiro (i.e., se houver 3 posts com 10, 3 posts com 5 e 3 posts com 3, mostra-se em 1º 3 posts com 10, em 2º 3 posts com 5 e em 3º 3 posts com 3, totalizando 9).
 
+Ir buscar os que têm maiores visualizações e dar-lhes posição 1, outra vez o mesmo raciocício não incluindo os anteriores e o mesmo para a 3ª vez.
