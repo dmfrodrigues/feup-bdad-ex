@@ -32,7 +32,9 @@ Cinemas, salas, e qualquer coisa mais. Selecionar texto mais correto para o UML.
 
 ## Pergunta 4
 
-Árvore genealogica, resposta correta é duas relações para si mesmo, uma para pai e outra para mãe
+Qual o melhor UML para representar uma árvore genealógica?
+
+- ![](2020N_04.svg) ✔
 
 ## Pergunta 5
 
