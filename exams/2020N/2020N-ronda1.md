@@ -126,11 +126,11 @@ Temos um blog, que representa a informação sobre os seus utilizadores, posts, 
 
 Tabelas:
 
-- Posts(<ins>idPost</ins>, datePublished, author→Users, numViews)
-- Comments(<ins>idComment</ins>, idPost→Posts, idUser→Users)
-- Tags(<ins>idTag</ins>, text)
-- PostTag(<ins>idPost</ins>→Post, <ins>idTag</ins>→Tag)
-- Users(<ins>idUser</ins>, nick)
+- Posts(<ins>idPost</ins>, datePublished, author→Users, views, text, title)
+- Comments(<ins>idComment</ins>, idPost→Posts, idUser→Users, datePosted, commentText)
+- Tags(<ins>idTag</ins>, tagText)
+- PostsTags(<ins>idPost</ins>→Posts, <ins>idTag</ins>→Tags)
+- Users(<ins>idUser</ins>, nick, isAdmin)
 
 ## Pergunta 16
 
