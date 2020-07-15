@@ -181,8 +181,116 @@ ORDER BY admin_nickname DESC;
 Quais os posts que têm um número de comentários acima do número médio de comentários por post?
 Número de comentários por post agrupando por id do post, calcular a média, contar o nº de comentários de post e selecionar os que estavam acima da média.
 
+Resposta correta:
+
+```sql
+SELECT idPost FROM Comments
+GROUP BY idPost
+HAVING COUNT(*) > (
+    SELECT AVG(numComments) FROM (
+        -- Contagem de comentários
+        SELECT idPost, COUNT(*) AS numComments FROM Comments
+        GROUP BY idPost
+    )
+);
+```
+
 ## Pergunta 19
 
 Para cada administrador mostrar o 1º, 2º e 3º posts mais vistos. Se não houver posts que chegue para mostrar também não se mostra. Se houver dois posts empatados em 1º mostra-se esses dois em primeiro (i.e., se houver 3 posts com 10, 3 posts com 5 e 3 posts com 3, mostra-se em 1º 3 posts com 10, em 2º 3 posts com 5 e em 3º 3 posts com 3, totalizando 9).
 
-Ir buscar os que têm maiores visualizações e dar-lhes posição 1, outra vez o mesmo raciocício não incluindo os anteriores e o mesmo para a 3ª vez.
+Resposta correta:
+
+```sql
+SELECT *
+FROM (
+    SELECT *
+    FROM (
+        SELECT *
+        FROM (
+            -- Primeiros
+            SELECT idUser, nick, idPost, views, 1 AS pos
+            FROM Users INNER JOIN Posts ON Users.idUser=Posts.author
+            WHERE (idUser, views) IN (
+                -- Máximo de views por admin
+                SELECT idUser, MAX(views) AS maxViews1
+                FROM (
+                    -- Todos os posts de admins
+                    SELECT *
+                    FROM Users INNER JOIN Posts ON Users.idUser=Posts.author
+                    WHERE isAdmin=1
+                )
+                GROUP BY idUser
+            )
+        )
+        UNION 
+            -- Segundos
+            SELECT idUser, nick, idPost, views, 2 AS pos
+            FROM Users INNER JOIN Posts ON Users.idUser=Posts.author
+            WHERE (idUser, views) IN (
+                -- 2º máximo de views por admin
+                SELECT idUser, MAX(views) AS maxViews1
+                FROM (
+                    -- Todos os posts com menos que o máximo
+                    SELECT U.idUser, U.nick, U.isAdmin, P.idPost, P.datePublished, P.author, P.views, P.text
+                    FROM Users AS U INNER JOIN Posts AS P ON U.idUser=P.author
+                    INNER JOIN (
+                        -- Máximo de views por admin
+                        SELECT idUser, MAX(views) AS maxViews1
+                        FROM (
+                            -- Todos os posts de admins
+                            SELECT *
+                            FROM Users INNER JOIN Posts ON Users.idUser=Posts.author
+                            WHERE isAdmin=1
+                        )
+                        GROUP BY idUser
+                    )
+                    AS T ON U.idUser=T.idUser
+                    WHERE views < maxViews1
+                )
+                GROUP BY idUser
+            )
+    )
+    UNION
+        -- Terceiros
+        SELECT idUser, nick, idPost, views, 3 AS pos
+        FROM Users INNER JOIN Posts ON Users.idUser=Posts.author
+        WHERE (idUser, views) IN (
+            -- 3º máximo de views por admin
+            SELECT idUser, MAX(views) AS maxViews1
+            FROM (
+                -- Todos os posts com menos que o 2º máximo
+                SELECT U.idUser, U.nick, U.isAdmin, P.idPost, P.datePublished, P.author, P.views, P.text
+                FROM Users AS U INNER JOIN Posts AS P ON U.idUser=P.author
+                INNER JOIN (
+                    -- 2º máximo de views por admin
+                    SELECT idUser, MAX(views) AS maxViews1
+                    FROM (
+                        -- Todos os posts com menos que o máximo
+                        SELECT U.idUser, U.nick, U.isAdmin, P.idPost, P.datePublished, P.author, P.views, P.text
+                        FROM Users AS U INNER JOIN Posts AS P ON U.idUser=P.author
+                        INNER JOIN (
+                            -- Máximo de views por admin
+                            SELECT idUser, MAX(views) AS maxViews1
+                            FROM (
+                                -- Todos os posts de admins
+                                SELECT *
+                                FROM Users INNER JOIN Posts ON Users.idUser=Posts.author
+                                WHERE isAdmin=1
+                            )
+                            GROUP BY idUser
+                        )
+                        AS T ON U.idUser=T.idUser
+                        WHERE views < maxViews1
+                    )
+                GROUP BY idUser
+                )
+                AS T ON U.idUser=T.idUser
+                WHERE views < maxViews1
+            )
+            GROUP BY idUser
+        )
+)
+ORDER BY idUser ASC, pos ASC
+;
+```
