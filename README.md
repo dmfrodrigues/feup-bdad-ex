@@ -27,3 +27,8 @@ All files are licensed under [GNU General Public License v3](LICENSE) by **© 20
 - all files in the `exams` folder and all artifacts deriving from it, which are licensed under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International](exams/LICENSE)
 
 The files not authored by me are presented as a fundamental complement to the presented solutions, and are made available under *fair use for education*.
+
+## Contributors
+
+Aside from me, the following contributors played a fundamental role in collecting further information about the contents of this repository:
+- [João António Sousa](https://github.com/JoaoASousa)

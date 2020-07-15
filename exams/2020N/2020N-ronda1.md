@@ -1,19 +1,34 @@
+<!-- (C) 2020 Diogo Rodrigues, João António Sousa -->
+<!-- Licensed under the terms of the GNU General Public License v3 -->
+
 ## Pergunta 1
 
-Uma florista pretende implementar um sistema de informação que guarde as flores e os acessórios que usa em arranjos florais.
+Uma florista pretende implementar um sistema de informação que guarde os tipos de flores e os acessórios que usa em arranjos florais.
+
+Também pretende guardar a quantidade de cada tipo de flor ou acessório utilizado em cada arranjo.
+
+Para os acessórios é necessário guardar a sua cor (logo não é preciso guardar a cor para mais nada, apenas para os acessórios).
 
 Selecionar UML adequado.
-(Não era a opção com quantidade a sair da composição. Era a opção com uma generalização disjoint, complete com o atributo da cor como subclasse de "part")
+
+1. ![](2020N_01a.svg) ✖
+2. ![](2020N_01b.svg) ✔
 
 ## Pergunta 2
 
+Considere o seguinte modelo concetual em UML.
+
+![](2020N_02.svg)
+
 Um presidente, diversos jogadores. Um dos jogadores podia ser capitão da equipa. Os jogadores e o presidente são pessoas (generalização disjoint, complete).
 
-Selecionar mapeamento para modelo relacional.
+Selecionar mapeamento para modelo relacional:
+
+1. `Player(idPlayer->Person, preferred_jersey_number, team->Team) NOT NULL(team)` ✖
 
 ## Pergunta 3
 
-Cinemas, salas, e qqr coisa mais. Selecionar texto mais correto para o UML.
+Cinemas, salas, e qualquer coisa mais. Selecionar texto mais correto para o UML.
 
 ## Pergunta 4
 
@@ -21,21 +36,30 @@ Cinemas, salas, e qqr coisa mais. Selecionar texto mais correto para o UML.
 
 ## Pergunta 5
 
-Relação 1 --- 0..1, meti chave externa do lado 1 em vez do lado 0..1. Se metesse do lado 0..1 evitava NULLs.
+Relação 1 --- 0..1;
+
+- Tinha que colocar a chave externa do lado 0..1 para evitar NULLs.
 
 ## Pergunta 6
 
+A primeira está relacionada com as chaves candidatas. Selecionou duas opções corretas mas faltou-lhe uma, que é:
+
+1. ✔
+2. ✔
+3. Qualquer relação pode ter várias chaves candidatas. ✔
+4. ✖
+
 ## Pergunta 7
 
-Que características é que as dependências funcionais têm que ter para estar na base mínima?
+Que características é que um conjunto de dependências funcionais tem que ter para estar na base mínima?
 
 - As dependências funcionais só podem ter um atributo do lado direito ✖
 - Se B é uma base mínima de uma relação, não pode haver outra base mínima ✖
-- Se removêssemos 1 FD deixaria de ser base mínima. ✔
+- Se removêssemos uma dependência funciona, deixaria de ser base mínima. ✔
 
 ## Pergunta 8
 
-Temos uma tabela e um conjunto de dependências funcionais, é para dizer em que forma normal é que está.
+Dada uma tabela e um conjunto de dependências funcionais, em que forma normal é que se encontra a relação?
 
 - Na 1ª FN e não na 2ª ✔
 - Na 2ª FN e não na 3ª ✖
@@ -44,7 +68,7 @@ Temos uma tabela e um conjunto de dependências funcionais, é para dizer em que
 
 ## Pergunta 9
 
-Script de criação de base de dados e preenchimento com dados, perguntava o que acontecia (funcionava, erro aqui, erro alí, ...)
+Script de criação de base de dados e preenchimento com dados, perguntava o que acontecia (funcionava, erro aqui, erro alí, ...). Era só copiar para um ficheiro, correr no SQLite e ver o que dava.
 
 ## Pergunta 10
 
@@ -52,33 +76,38 @@ Script de criação de base de dados e preenchimento com dados, perguntava o que
 
 ## Pergunta 11
 
-Sobre vistas atualizáveis (ver bibliografia)
+Dadas 4 vistas, perguntava-se quais é que eram atualizáveis de acordo com o standard de SQL.
+
+1. Uma vista que mostra as editoras que publicaram livros (acho eu). Se eu introduzir uma editora, que livro é que essa editora publicou? Não sei...
+
+**Nota:** Uma vista só é atualizável de acordo com o standard quando não existem quaisquer ambiguidades sobre as operações que é necessário realizar nas tabelas de base.
 
 ## Pergunta 12
 
-Sobre gatilhos.
-3 drop-downs para escolher a opção correta (?). No 1º tinha a opção correta era AFTER INSERT ou só AFTER (?).
+É-nos dado um gatilho relacionado com inserção, com três partes incompletas que devem ser completadas.
+
+- Uma delas perguntava quando é que o gatilho é corrido. A resposta correta é: `AFTER INSERT`.
 
 ## Pergunta 13
 
 Pergunta sobre os índices. Para determinar número de acessos ao disco.
 
-Em média, um autor escreve 3 livros e um livro é escrito por 3 autores
+Em média, um autor escreve 3 livros e um livro é escrito por 3 autores. Praticamente igual ao exemplo 8.14 (p.355) do livro *A First Course in Database Systems* (3rd ed., Ullman & Widom)
 
-1ª situação: não há nenhum índice
-
-2ª situação: com índice num (4 acessos, 1 ao índice e 3 à tabela)
-
-3ª situação: com índice noutro (4 acessos, 1 ao índice e 3 à tabela)
+- 1ª situação: não há nenhum índice
+- 2ª situação: com índice num (4 acessos, 1 ao índice e 3 à tabela)
+- 3ª situação: com índice noutro (4 acessos, 1 ao índice e 3 à tabela)
 
 ## Pergunta 14
 
-Níveis de isolamento (julgo que é para determinar nível de isolamento para que a leitura no início e no final de uma transação seja o mesmo):
+São feitas leituras de uma base de dados hora-a-hora na mesma transação. Que nível de isolamento necessito para garantir que leituras de dados no início e final da transação dêem o mesmo resultado?
 
 - Serializable ✔
 - Repeatable Read ✖
+- Read Commited ✖
+- Read Uncommited ✖
 
-Em Repeatable Read há algumas transações que podem decorrer em paralelo que podem provocar alterações nestas listas.
+Em Repeatable Read há algumas transações que podem decorrer em paralelo que podem provocar alterações nestas listas. Isto porque Repeatable Read diz que um tuplo lido várias vezes não pode mudar, mas uma relação *pode* ver novos tuplos (tuplos-fantasma) numa relação lida várias vezes.
 
 ## Pergunta 15
 
