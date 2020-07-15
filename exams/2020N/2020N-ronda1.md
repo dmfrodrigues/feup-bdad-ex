@@ -179,7 +179,6 @@ ORDER BY admin_nickname DESC;
 ## Pergunta 18
 
 Quais os posts que têm um número de comentários acima do número médio de comentários por post?
-Número de comentários por post agrupando por id do post, calcular a média, contar o nº de comentários de post e selecionar os que estavam acima da média.
 
 Resposta correta:
 
