@@ -152,8 +152,8 @@ Resposta correta:
 SELECT Posts.title AS post_title, COUNT(*) AS num_comments
 FROM Posts, Comments
 WHERE Posts.idPost=Comments.idPost
-GROUP BY post_title
-ORDER BY num_comments DESC, Posts.idPost ASC;
+GROUP BY Posts.idPost
+ORDER BY num_comments DESC, post_title ASC;
 ```
 
 ## Pergunta 17
