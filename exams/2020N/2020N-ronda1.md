@@ -136,16 +136,6 @@ Tabelas:
 
 Apresente uma lista de posts, ordenada por ordem decrescente de número de comentários associados a cada post (em caso de empate, por ordem alfabética do título do post).
 
-Minha resposta:
-
-```sql
-SELECT Posts.title AS post_title, COUNT(*) AS num_comments
-FROM Posts, Comments
-WHERE Posts.idPost=Comments.idPost
-GROUP BY post_title
-ORDER BY num_comments DESC, post_title ASC;
-```
-
 Resposta correta:
 
 ```sql
@@ -159,32 +149,6 @@ ORDER BY num_comments DESC, post_title ASC;
 ## Pergunta 17
 
 Quem são os administradores do blog que não publicaram nenhum post com a tag 'cooking' entre o dia 29 de agosto de 2019 (inclusive) e os 15 dias seguintes inclusive. Ordene por ordem alfabética inversa da alcunha do administrador.
-
-Minha resposta:
-
-```sql
--- Admins que não têm posts com cooking nas datas
-SELECT nick AS admin_nickname FROM Users
-WHERE isAdmin=1
-AND idUser NOT IN (
-    -- Utilizadores com posts com tag de cooking nas datas
-    SELECT author FROM POsts
-    WHERE idPost IN (
-        -- Posts publicados nas tais datas
-        -- e com tag de cooking
-        SELECT PostsTags.idPost FROM Posts, PostsTags
-        WHERE PostsTags.idPost=Posts.idPost
-        AND date("2019-08-29") <= datePublished
-        AND julianday(datePublished) <= julianday(date("2019-08-29"))+15
-        AND idTag IN (
-            -- Tag de cooking
-            SELECT idTag FROM Tags
-            WHERE tagText LIKE "cooking"
-        )
-        ORDER BY datePublished
-    )
-);
-```
 
 Resposta correta:
 
