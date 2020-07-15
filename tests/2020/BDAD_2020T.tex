@@ -21,10 +21,10 @@ Select the correct answer(s) about the given diagram:
 \end{center}
 
 \begin{enumerate}
-    \item \checkbox~B is part of A
-    \item \checkbox~If an instance of A is deleted, the instances of B it contains are also deleted
-    \item \checkbox~An instance of B can exist without the existence of any instance of A
-    \item \checkbox~The same instance of B can only be part of one instance of A
+    \item \boxedgreencheckmark~B is part of A 
+    \item \boxedredcross      ~If an instance of A is deleted, the instances of B it contains are also deleted 
+    \item \boxedgreencheckmark~An instance of B can exist without the existence of any instance of A 
+    \item \boxedredcross      ~The same instance of B can only be part of one instance of A 
 \end{enumerate}
 
 \question{Question 2}
@@ -32,7 +32,7 @@ In an UML class diagram, atomic attributes are those which:
 
 \begin{enumerate}
     \item Are part of a key
-    \item Have a domain containing only atomic values and the attribute contains only a single value from that domain
+    \item \textbf{Have a domain containing only atomic values and the attribute contains only a single value from that domain \greencheckmark}
     \item Can be determined from other attribute(s)
     \item Can identify an object uniquely
     \item I don't want to answer
@@ -48,7 +48,7 @@ Consider the conceptual model of a hospital's database, where information on pat
 
 \begin{enumerate}
     \item I don't want to answer
-    \item \includegraphics[scale=0.8]{2020T-03b.png}
+    \item \includegraphics[scale=0.8]{2020T-03b.png} \greencheckmark
     \item \includegraphics[scale=0.8]{2020T-03c.png}
     \item \includegraphics[scale=0.8]{2020T-03d.png}
     \item \includegraphics[scale=0.8]{2020T-03e.png}
@@ -58,18 +58,22 @@ Consider the conceptual model of a hospital's database, where information on pat
 When should we use a generalization?
 
 \begin{enumerate}
-    \item When subclass is the part and the superclass is the whole
-    \item When subclass is a member of superclass
-    \item I don't want to answer
-    \item When both super and subclass have attributes in common
-    \item When subclass is the whole and the superclass is the part
+    \item \label{itm:2020N_a} When subclass is the part and the superclass is the whole
+    \item \label{itm:2020N_b} \textbf{When subclass is a member of superclass \greencheckmark}
+    \item \label{itm:2020N_c} I don't want to answer
+    \item \label{itm:2020N_d} When both super and subclass have attributes in common
+    \item \label{itm:2020N_e} When subclass is the whole and the superclass is the part
 \end{enumerate}
+
+\ansseparator
+
+\ref{itm:2020N_a} and \ref{itm:2020N_e} are wrong because a generalization does not represent a part-whole relation; that is represented using aggregation/composition.
 
 \question{Question 5}
 In UML class diagram, how does a derived attribute affect redundancy?
 
 \begin{enumerate}
-    \item Stored derived attributes are always redundant
+    \item Stored derived attributes are always redundant \greencheckmark
     \item Stored derived attributes are not redundant
     \item Due to the high possibility of gaining additional knowledge from a derived attribute, they are always redundant
     \item Since you store the derived attribute and all data necessary to derive it, derived attributes cannot affect redundancy.
@@ -80,10 +84,10 @@ In UML class diagram, how does a derived attribute affect redundancy?
 When we want to convert many-to-one associations to the relational model by adding an additional relation with a key from the many side, what advantages will it bring to the schema?
 
 \begin{enumerate}
-    \item \checkbox~Increased rigour of the schema
-    \item \checkbox~Increased performance due to a larger number of relations
-    \item \checkbox~Increased performance due to a smaller number of relations
-    \item \checkbox~Increased extensibility
+    \item \boxedgreencheckmark~Increased rigour of the schema
+    \item \boxedredcross      ~Increased performance due to a larger number of relations
+    \item \boxedredcross      ~Increased performance due to a smaller number of relations
+    \item \boxedgreencheckmark~Increased extensibility
 \end{enumerate}
 
 \newpage
@@ -95,23 +99,23 @@ Consider the following UML diagram and its conversion to the relational model. W
 \end{center}
 
 \begin{enumerate}
-    \item \checkbox
+    \item \boxedredcross
 \begin{blocklisting}
 Person(id, name, age, instrument, musical_genre, category, salary, ticket)
 \end{blocklisting}
-    \item \checkbox
+    \item \boxedredcross
 \begin{blocklisting}
 Musician(name, instrument, musical_genre)
 Staff(name, category, salary
 AudienceMember(name, ticket)
 \end{blocklisting}
-    \item \checkbox
+    \item \boxedgreencheckmark
 \begin{blocklisting}
 Musician(id, name, age, instrument, musical_genre)
 Staff(id, name, age, category, salary)
 AudienceMember(id, name, age, ticket)
 \end{blocklisting}
-    \item \checkbox
+    \item \boxedgreencheckmark
 \begin{blocklisting}
 Person(id, name, age)
 Musician(id->Person, name, instrument, musical_genre)
@@ -129,39 +133,39 @@ Consider the following conceptual model. Mapping it to the relational model
 \end{center}
 
 \begin{enumerate}
-    \item \checkbox~Can result in 3 relations, one of them with a compound primary key
-    \item \checkbox~Can result in 3 relations, two of them without foreign keys
-    \item \checkbox~Can result in 2 relations with a foreign key in Car
-    \item \checkbox~Can result in 2 relations with a foreign key in Person
+    \item \boxedredcross      ~Can result in 3 relations, one of them with a compound primary key
+    \item \boxedgreencheckmark~Can result in 3 relations, two of them without foreign keys
+    \item \boxedgreencheckmark~Can result in 2 relations with a foreign key in Car
+    \item \boxedredcross      ~Can result in 2 relations with a foreign key in Person
 \end{enumerate}
 
 \question{Question 9}
 There are three main methods that convert an UML into a Relation regarding Generalizations. Which one(s) is/are commonly used for overlapping generalizations?
 
 \begin{enumerate}
-    \item \checkbox~Use of NULLs
-    \item \checkbox~Object-oriented
-    \item \checkbox~E/R style
+    \item \boxedgreencheckmark~Use of NULLs
+    \item \boxedredcross      ~Object-oriented
+    \item \boxedgreencheckmark~E/R style
 \end{enumerate}
 
 \question{Question 10}
 Mapping a ternary association and its associated classes
 
 \begin{enumerate}
-    \item \checkbox~Is affected by the number of associated classes
-    \item \checkbox~Is affected by the multiplicity
-    \item \checkbox~Can be converted to 3 relations
-    \item \checkbox~Always results in 4 relations
+    \item \boxedredcross      ~Is affected by the number of associated classes
+    \item \boxedgreencheckmark~Is affected by the multiplicity
+    \item \boxedredcross      ~Can be converted to 3 relations
+    \item \boxedgreencheckmark~Always results in 4 relations
 \end{enumerate}
 
 \question{Question 11}
 A table in Boyce Codd Normal Form:
 
 \begin{enumerate}
-    \item \checkbox~Can have redundancy in some cases.
-    \item \checkbox~Cannot assure dependency preservation.
-    \item \checkbox~Cannot be subject of deletion anomalies.
-    \item \checkbox~May be subject of update anomalies.
+    \item \boxedredcross      ~Can have redundancy in some cases.
+    \item \boxedgreencheckmark~Cannot assure dependency preservation.
+    \item \boxedgreencheckmark~Cannot be subject of deletion anomalies.
+    \item \boxedredcross      ~May be subject of update anomalies.
 \end{enumerate}
 
 \question{Question 12}
@@ -178,25 +182,25 @@ Consider the relation $R (A, B, C, D, E, F, G, H, I)$ with the following functio
 Which attributes belong to the closure of $\{A, F, G\}$?
 
 \begin{enumerate}
-    \item \checkbox~$A$
-    \item \checkbox~$B$
-    \item \checkbox~$C$
-    \item \checkbox~$D$
-    \item \checkbox~$E$
-    \item \checkbox~$F$
-    \item \checkbox~$G$
-    \item \checkbox~$H$
-    \item \checkbox~$I$
+    \item \boxedgreencheckmark~$A$
+    \item \boxedredcross      ~$B$
+    \item \boxedgreencheckmark~$C$
+    \item \boxedgreencheckmark~$D$
+    \item \boxedgreencheckmark~$E$
+    \item \boxedgreencheckmark~$F$
+    \item \boxedgreencheckmark~$G$
+    \item \boxedredcross      ~$H$
+    \item \boxedredcross      ~$I$
 \end{enumerate}
 
 \question{Question 13}
 Regarding decompositions, identify the correct statements.
 
 \begin{enumerate}
-    \item \checkbox~If $R_1$ and $R_2$ are a decomposition of $R$, the functional dependencies of $R$ are preserved in $R_1$ and $R_2$
-    \item \checkbox~If we decompose to BCNF, the final schema will also be in 3NF
-    \item \checkbox~If $R_1 \naturaljoin R_2=R$, $R_1$ and $R_2$ make a decomposition of $R$
-    \item \checkbox~If $R_1$ and $R_2$ are a decomposition of $R$, the functional dependencies of $R$ are always preserved in $R_1$ or $R_2$
+    \item \boxedredcross~If $R_1$ and $R_2$ are a decomposition of $R$, the functional dependencies of $R$ are preserved in $R_1$ and $R_2$
+    \item \boxedgreencheckmark~If we decompose to BCNF, the final schema will also be in 3NF
+    \item \boxedgreencheckmark~If $R_1 \naturaljoin R_2=R$, $R_1$ and $R_2$ make a decomposition of $R$
+    \item \boxedredcross~If $R_1$ and $R_2$ are a decomposition of $R$, the functional dependencies of $R$ are always preserved in $R_1$ or $R_2$
 \end{enumerate}
 
 \newpage
@@ -216,7 +220,7 @@ What are the functional dependencies of the relation $S (A, B, H)$, a projection
 \begin{enumerate}
     \item $S$ has the same functional dependencies as $R$
     \item I don't want to answer.
-    \item $A, B \rightarrow H$
+    \item $A, B \rightarrow H$ \greencheckmark
     \item $A\rightarrow D$; $B\rightarrow I$; $A, B \rightarrow  D, H, I$; $A, H\rightarrow D$; $B, H\rightarrow I$
     \item $A\rightarrow D$; $B\rightarrow I$; $B, D\rightarrow  H$; $A, E\rightarrow C$
 \end{enumerate}
@@ -225,17 +229,17 @@ What are the functional dependencies of the relation $S (A, B, H)$, a projection
 What is a minimal superkey?
 
 \begin{enumerate}
-    \item \checkbox~Primary key
-    \item \checkbox~Foreign key
-    \item \checkbox~Secondary key
-    \item \checkbox~Candidate key
+    \item \boxedredcross      ~Primary key
+    \item \boxedredcross      ~Foreign key
+    \item \boxedredcross      ~Secondary key
+    \item \boxedgreencheckmark~Candidate key
 \end{enumerate}
 
 \question{Question 16}
 Consider you select a single numeric attribute as the primary key of a table. What is the most suitable data type for the primary key column in SQLite?
 
 \begin{enumerate}
-    \item \texttt{INTEGER} or \texttt{REAL} depending on the characteristics of the value.
+    \item \textbf{\texttt{INTEGER} or \texttt{REAL} depending on the characteristics of the value. \greencheckmark}
     \item \texttt{REAL} if a big range of values is needed and \texttt{INTEGER} otherwise.
     \item \texttt{INTEGER} if autoincrement is needed and \texttt{REAL} otherwise.
     \item I don't want to answer.
@@ -269,7 +273,7 @@ ALTER TABLE T ADD AID int REFERENCES A(AID) ON UPDATE PROPAGATE;
     \item
     \begin{lstlisting}[language=SQL, numbers=none, frame=none, belowskip=0pt]
 ALTER TABLE T ADD AID int REFERENCES A(AID) ON UPDATE CASCADE;
-    \end{lstlisting}
+    \end{lstlisting} \greencheckmark
 \end{enumerate}
 
 \question{Question 18}
@@ -304,7 +308,7 @@ CREATE TABLE Package (
     idProd INTEGER REFERENCES Product(id) on UPDATE CASCADE NOT NULL, 
     amount INTEGER
 );
-\end{lstlisting}
+\end{lstlisting} \greencheckmark
 
     \item 
 \begin{lstlisting}[language=SQL, numbers=none, frame=none, belowskip=0pt]
@@ -326,13 +330,13 @@ CREATE TABLE Package (
 \end{enumerate}
 
 \question{Question 19}
-Which statement is wrong about the PRIMARY KEY constraint in SQL?
+Which statement is wrong about the \texttt{PRIMARY KEY} constraint in SQL?
 
 \begin{enumerate}
     \item Primary key can be made of multiple attributes
-    \item A PRIMARY KEY uniquely identifies each record in a table
-    \item Primary keys must contain UNIQUE values
-    \item Primary key can be made of any single attributes
+    \item A \texttt{PRIMARY KEY} uniquely identifies each record in a table
+    \item Primary keys must contain \texttt{UNIQUE} values
+    \item \textbf{Primary key can be made of any single attributes \greencheckmark}
     \item I don't want to answer
 \end{enumerate}
 
@@ -352,7 +356,7 @@ Which ones are correct given the video streaming problem?
 
 \begin{enumerate}
     \item I don't want to answer.
-    \item I and II
+    \item \textbf{I and II \greencheckmark}
     \item II and III
     \item Only I
     \item I, II and III
@@ -391,7 +395,7 @@ Which of the following queries represents all possible combinations of cars, wit
 \begin{enumerate}
     \item $\sigma_{Interior.color <> Car.color} (Car \times Color \times Interior \times (\rho_{interiorColor(color)} Color))$
     \item $Car \times Color \times Interior \times (\rho_{interiorColor(color)} Color))$
-    \item $\sigma_{interiorcolor <> color} (Car \times Color \times Interior \times (\rho_{interiorColor(color)} Color))$
+    \item $\sigma_{interiorcolor <> color} (Car \times Color \times Interior \times (\rho_{interiorColor(color)} Color))$ \greencheckmark
     \item $\sigma_{Interior.color <> Car.color} (Car \times Color \times Interior \times Color)$
     \item I do not wish to answer
 \end{enumerate}
@@ -404,7 +408,7 @@ SELECT a,b FROM T1 NATURAL JOIN (SELECT * FROM T2 WHERE c='John');
 \end{lstlisting}
 
 \begin{enumerate}
-    \item $\pi_{a,b} (T1 \naturaljoin \sigma_{c='John'} (T2))$
+    \item $\pi_{a,b} (T1 \naturaljoin \sigma_{c='John'} (T2))$ \greencheckmark
     \item $\pi_{c='John'} (T1 \naturaljoin \sigma_{a,b} (T2))$
     \item $\sigma_{a,b} (T1 \naturaljoin \pi_{c='John'} (T2))$
     \item I do not wish to answer
@@ -417,7 +421,7 @@ If two relations $R$ and $S$ are joined, then the non-matching tuples of both $R
 \begin{enumerate}
     \item Right Inner Join
     \item Full Outer Join
-    \item Inner Join
+    \item \textbf{Inner Join \greencheckmark}
     \item Left Outer Join
     \item I do not wish to answer
 \end{enumerate}
@@ -426,7 +430,7 @@ If two relations $R$ and $S$ are joined, then the non-matching tuples of both $R
 Given $R(A, B, C, D)$, $S(A, C, E)$, what is the schema of $R \naturaljoin S$?
 
 \begin{enumerate}
-    \item $(A, C, B, D, E)$
+    \item $(A, C, B, D, E)$ \greencheckmark
     \item I do not wish to answer
     \item $(A, B, C, D)$
     \item $(B, D, E)$
@@ -441,7 +445,7 @@ Given $R(A, B, C, D)$, $S(A, C, E)$, what is the schema of $R \naturaljoin S$?
 
 \begin{enumerate}
     \item $\sigma_{(sID = '12'~\vee~sID = '23')} Apply$
-    \item $\pi_{(sID,dec)} Apply$
+    \item $\pi_{(sID,dec)} Apply$ \greencheckmark
     \item I do not wish to answer
     \item $\pi_{(sID,dec)} (\sigma_{(sID = '12')} Apply)$
     \item $\sigma_{(dec = 'Y'~\vee~dec = 'N')} Apply$

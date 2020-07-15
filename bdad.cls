@@ -4,7 +4,7 @@
 % Margins
 \RequirePackage[top=35mm,bottom=35mm,left=25mm,right=25mm]{geometry}
 % Tables with colored cells
-\RequirePackage[table]{xcolor}%
+\RequirePackage[table,dvipsnames]{xcolor}%
 % Graphics and images
 \RequirePackage{tikz}
 \RequirePackage{tikz-qtree}
@@ -55,7 +55,11 @@
 
 \def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
 \newcommand\checkbox{$\square$}
-\newcommand\greencheckmark{{\color{green}\checkmark}}
+\RequirePackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand\greencheckmark{{\color{ForestGreen}\ding{52}}}
+\newcommand\redcross{{\color{red}\ding{54}}}
+\newcommand\boxedgreencheckmark{\makebox[0pt][l]{$\square$}\raisebox{.15ex}{\hspace{0.1em}\greencheckmark}}
+\newcommand\boxedredcross{\mbox{\ooalign{\redcross\cr\hidewidth$\square$\hidewidth\cr}}}
 \newcommand\naturaljoin{\bowtie}
 % Answer separator
 \newcommand\ansseparator{\noindent\hfil\rule{0.5\textwidth}{.4pt}\hfil}
