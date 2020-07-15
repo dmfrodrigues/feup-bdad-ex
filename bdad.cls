@@ -27,6 +27,18 @@
     keywordstyle=\color{blue}, % keyword color
     stringstyle=\color{red} % string color
 }
+\lstnewenvironment{blocklisting}{
+    \lstset{
+        basicstyle=\ttfamily,
+        frame=none,
+        tabsize=4,
+        numbers=none,
+        basewidth=0.5em,
+        commentstyle=\color{green}, % comment color
+        keywordstyle=\color{blue}, % keyword color
+        stringstyle=\color{red} % string color
+    }
+}{}
 % Tables with bold rows
 \RequirePackage{tabularx}
 \newcommand\setrow[1]{\gdef\rowmac{#1}#1\ignorespaces}
@@ -42,6 +54,7 @@
 \RequirePackage[retain-explicit-plus,retain-zero-exponent]{siunitx} %SI units
 
 \def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+\newcommand\checkbox{$\square$}
 \newcommand\greencheckmark{{\color{green}\checkmark}}
 \newcommand\naturaljoin{\bowtie}
 % Answer separator
