@@ -56,8 +56,8 @@ Sobre vistas atualizáveis (ver bibliografia)
 
 ## Pergunta 12
 
-Sobre gatilhos
-Gatilho é depois da Inserção.
+Sobre gatilhos.
+3 drop-downs para escolher a opção correta (?). No 1º tinha a opção correta era AFTER INSERT ou só AFTER (?).
 
 ## Pergunta 13
 
