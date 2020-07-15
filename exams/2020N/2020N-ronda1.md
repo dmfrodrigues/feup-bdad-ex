@@ -44,7 +44,7 @@ Relação 1 --- 0..1;
 
 ## Pergunta 6
 
-A primeira está relacionada com as chaves candidatas. Selecionou duas opções corretas mas faltou-lhe uma, que é:
+Que propriedades têm as chaves candidatas?
 
 1. ✔
 2. ✔
