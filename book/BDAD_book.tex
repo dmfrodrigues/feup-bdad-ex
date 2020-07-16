@@ -1,0 +1,101 @@
+\documentclass{bdad}
+\usepackage{import}
+\usepackage{standalone}
+\usepackage[english]{babel}
+\usepackage[yyyymmdd,hhmmss]{datetime}
+\renewcommand{\dateseparator}{-}
+% Metadata
+\title{BDAD -- solved book exercises}
+\author{Diogo Miguel Ferreira Rodrigues (\href{mailto:dmfrodrigues2000@gmail.com}{dmfrodrigues2000@gmail.com})}
+\date{2019/20, 2nd semester}
+\setcounter{tocdepth}{2}
+
+\makeatletter
+\renewcommand{\l@chapter}{\bfseries\@dottedtocline{0}{0em}{2.5em}}
+\renewcommand{\l@section}{\normalfont\@dottedtocline{1}{1.5em}{3.5em}}
+\renewcommand{\l@subsection}{\normalfont\@dottedtocline{2}{4.0em}{3.6em}}
+\renewcommand{\l@subsubsection}{\normalfont\@dottedtocline{3}{7.4em}{4.5em}}
+\makeatother
+
+% Document
+\begin{document}
+\maketitle
+\begin{secondpage}
+    Copyright \copyright 2020--\the\year\ Diogo Rodrigues\par
+    \IfFileExists{VERSION}{Version \input{VERSION}}{Draft version}\par
+    \immediate\write18{../get-commit-info.sh > COMMIT.tex}
+    Compiled on \today~\currenttime~from \href{https://github.com/dmfrodrigues/feup-bdad-ex}{dmfrodrigues/feup-bdad-ex}, commit \input{COMMIT}\unskip.\par
+    Permission is granted to copy and distribute this document under the terms of the 
+    \href{https://creativecommons.org/licenses/by-nc-nd/4.0/}{Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International}
+    public license.
+\end{secondpage}
+\frontmatter
+\tableofcontents
+\mainmatter
+
+\setcounter{chapter}{2}
+\setcounter{section}{2}
+\section{Defining a Relation Schema in SQL}
+\subsection{Exercises for Section 2.3}
+\subsubsection{Exercise 2.3.1}
+\textbf{a)}
+\lstinputlisting[language=SQL]{2-3-1-a.sql}
+\textbf{b)}
+\lstinputlisting[language=SQL]{2-3-1-b.sql}
+\textbf{c)}
+\lstinputlisting[language=SQL]{2-3-1-c.sql}
+\textbf{d)}
+\lstinputlisting[language=SQL]{2-3-1-d.sql}
+\textbf{e)}
+\lstinputlisting[language=SQL]{2-3-1-e.sql}
+\textbf{f)}
+\lstinputlisting[language=SQL]{2-3-1-f.sql}
+
+\newpage
+\subsubsection{Exercise 2.3.2}
+\textbf{a)}
+\lstinputlisting[language=SQL]{2-3-2-a.sql}
+\textbf{b)}
+\lstinputlisting[language=SQL]{2-3-2-b.sql}
+\textbf{c)}
+\lstinputlisting[language=SQL]{2-3-2-c.sql}
+\textbf{d)}
+\lstinputlisting[language=SQL]{2-3-2-d.sql}
+\textbf{e)}
+\lstinputlisting[language=SQL]{2-3-2-e.sql}
+\textbf{f)}
+\lstinputlisting[language=SQL]{2-3-2-f.sql}
+
+\section{An Algebraic Query Language}
+\setcounter{section}{9}
+\subsection{Combining Operations to Form Queries}
+\subsubsection{Example 2.17}
+\begin{enumerate}
+    \item $\select{length \geq 100}{Movies}$
+    \item $\select{studioName=\texttt{'Fox'}}{Movies}$
+    \item $\select{length \geq 100}{Movies} \cap \select{studioName=\texttt{'Fox'}}{Movies} = \select{length \geq 100 \AND studioName=\texttt{'Fox'}}{Movies}$
+    \item $\project{title, year}{\select{length \geq 100 \AND studioName=\texttt{'Fox'}}{Movies}}$
+\end{enumerate}
+
+\subsubsection{Exercise 2.4.1}
+\begin{enumerate}[label=\alph*)]
+    \item $\select{speed \geq 3.00}{PC}$
+    \item $\project{maker}{Product \naturaljoin \select{hd > \SI{100}{\giga\byte}}{PC}}$
+    \item $\project{model, price}{\select{maker=\texttt{'B'}}{Product}}$
+    \item $\project{model}{\select{color=\texttt{TRUE} \AND type=\texttt{'laser'}}{Printer}}$
+    \item $\project{maker}{\select{type=\texttt{'laptop'}}{Product}} - \project{maker}{\select{type=\texttt{'pc'}}{Product}}$
+    \item $\project{PC1.hd}{(\rename{PC1}{PC}) \naturaljoin_{PC1.hd = PC2.hd} (\rename{PC2}{PC})}$
+    \item $\project{PC1.model, PC2.model}{(\rename{PC1}{PC}) \naturaljoin_{PC1.ram=PC2.ram \AND PC1.model < PC2.model} (\rename{PC2}{PC})}$
+    \item $H' := \select{speed \geq 2.80}{Product \naturaljoin PC}$ \\
+    $H :=\project{H_1.maker}{\rename{H_1}{H'} \naturaljoin_{H_1.maker=H_2.make \AND H_1.model \neq H_2.model} \rename{H_2}{H'}}$
+    \item $Computer := Product \naturaljoin (PC \cup \project{model, speed, ram, hd, price}{Laptop})$ \\
+    $MaxSpeed = \project{speed}{Computer} - \project{C_1.speed}{\rename{C_1}{Computer} \naturaljoin_{C_1.speed < C_2.speed} \rename{C_2}{Computer}}$ \\
+    $I := \project{maker}{Computer \naturaljoin MaxSpeed}$
+    \item $PC' := Product \naturaljoin PC$ \\
+    $J' := \rename{PC_1}{PC'} \times \rename{PC_2}{PC'} \times \rename{PC_3}{PC'}$ \\
+    $J := \project{PC_1.maker}{\select{PC_1.maker=PC_2.maker=PC_3.maker \AND \#\{PC_1.model, PC_2.model, PC_3.model\}=3}{J'}}$
+    \item TODO
+\end{enumerate}
+
+
+\end{document}

@@ -51,7 +51,7 @@
 \RequirePackage{amsmath,amssymb}
 \RequirePackage{mathtools}
 \RequirePackage[inline]{enumitem}
-\RequirePackage[retain-explicit-plus,retain-zero-exponent]{siunitx} %SI units
+\RequirePackage[binary-units=true,retain-explicit-plus,retain-zero-exponent]{siunitx} %SI units
 
 \def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
 \newcommand\checkbox{$\square$}
@@ -61,6 +61,10 @@
 \newcommand\boxedgreencheckmark{\makebox[0pt][l]{$\square$}\raisebox{.15ex}{\hspace{0.1em}\greencheckmark}}
 \newcommand\boxedredcross{\mbox{\ooalign{\redcross\cr\hidewidth$\square$\hidewidth\cr}}}
 \newcommand\naturaljoin{\bowtie}
+\newcommand\select[2]{\sigma_{#1}({#2})}
+\newcommand\project[2]{\pi_{#1}({#2})}
+\newcommand\rename[2]{\rho_{#1}({#2})}
+\newcommand\AND{~\texttt{AND}~}
 % Answer separator
 \newcommand\ansseparator{\noindent\hfil\rule{0.5\textwidth}{.4pt}\hfil}
 % Copyright page

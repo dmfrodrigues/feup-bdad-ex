@@ -1,0 +1,1 @@
+ALTER TABLE Laptop ADD od TEXT DEFAULT 'none';
