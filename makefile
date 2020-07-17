@@ -10,8 +10,7 @@ extra: $(OUTFILES_EXTRA)
 	cd $(<D) && $(LATEX) $(<F)
 
 test: FORCE
-	make -C 04-sql-ddl test
-	make -C 05-querying test
+	make -C tp test
 	make -C exams test
 
 clean:

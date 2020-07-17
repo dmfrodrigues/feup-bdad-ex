@@ -21,6 +21,7 @@
 *.lof
 
 !exams/*/20[0-9][0-9][NR].pdf
+!tp/*/*/*.pdf
 .vscode
 COMMIT.tex
 *-tmp.tex
