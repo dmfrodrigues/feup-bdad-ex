@@ -13,6 +13,14 @@
 - **Tools:** SQL
 - **Course grade:** ?/20
 
+## Contents
+
+- [Theoretical-practical lessons](tp)
+- [Tests solutions](tests)
+- [Exams solutions](exams)
+- [Curricular unit book exercises](book)
+- [Kahoot](kahoot) (actually only has a script to create the usual College database)
+
 ## Documents
 
 Documents are compiled by Github Actions, to see them go to [`Actions`](https://github.com/dmfrodrigues/feup-bdad-ex/actions) > `Workflows` > [`docs`](https://github.com/dmfrodrigues/feup-bdad-ex/actions?query=workflow%3Adocs), go to the most recent action and check `This run > Artifacts`.
