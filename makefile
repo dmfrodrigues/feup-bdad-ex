@@ -1,6 +1,6 @@
 LATEX=latexmk -f -interaction=nonstopmode --shell-escape -pdf
 
-all: exams/BDAD_exams.pdf
+all: exams/BDAD_exams.pdf book/BDAD_book.pdf
 
 OUTFILES_EXTRA = $(shell find . -name "BDAD_*.tex" | sed 's/.tex/.pdf/g')
 
