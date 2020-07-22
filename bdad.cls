@@ -1,6 +1,12 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{bdad}
 \LoadClass[a4paper]{book}
+
+\usepackage{import}
+\usepackage{standalone}
+\usepackage[yyyymmdd,hhmmss]{datetime}
+\renewcommand{\dateseparator}{-}
+
 % Margins
 \RequirePackage[top=35mm,bottom=35mm,left=25mm,right=25mm]{geometry}
 % Tables with colored cells
@@ -12,21 +18,10 @@
 % Encodings (to render letters with diacritics and special characters)
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
-% Hyperreferences
-\RequirePackage{hyperref}
-% Source code
-\RequirePackage{listings}
-\renewcommand{\lstlistingname}{File}
-\lstset{
-    basicstyle=\ttfamily,
-    frame=tb, % draw frame at top and bottom of the code
-    tabsize=4, % tab space width
-    numbers=left, % display line numbers on the left
-    showstringspaces=false, % don't show spaces in strings
-    commentstyle=\color{green}, % comment color
-    keywordstyle=\color{blue}, % keyword color
-    stringstyle=\color{red} % string color
-}
+
+
+\RequirePackage{email}
+\RequirePackage{basiclistings}
 \lstnewenvironment{blocklisting}{
     \lstset{
         basicstyle=\ttfamily,
@@ -68,16 +63,7 @@
 % Answer separator
 \newcommand\ansseparator{\noindent\hfil\rule{0.5\textwidth}{.4pt}\hfil}
 % Copyright page
-\newenvironment{secondpage}{
-    \clearpage\null\vfill
-    \thispagestyle{empty}
-    \begin{minipage}[b]{0.9\textwidth}
-        \footnotesize\raggedright
-        \setlength{\parskip}{0.5\baselineskip}
-}{
-    \end{minipage}
-    \vspace*{2\baselineskip}
-}
+\RequirePackage{secondpage}
 % Some work
 \def\title#1{\gdef\@title{#1}\gdef\@@title{#1}}
 \def\author#1{\gdef\@author{#1}\gdef\@@author{#1}}
