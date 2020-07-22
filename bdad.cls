@@ -2,17 +2,26 @@
 \ProvidesClass{bdad}
 \LoadClass{bookauthor}
 
+% Tables with colored cells
+\RequirePackage[table,dvipsnames]{xcolor}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+\newcommand\checkbox{$\square$}
+\RequirePackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand\greencheckmark{{\color{ForestGreen}\ding{52}}}
+\newcommand\redcross{{\color{red}\ding{54}}}
+\newcommand\boxedgreencheckmark{\makebox[0pt][l]{$\square$}\raisebox{.15ex}{\hspace{0.1em}\greencheckmark}}
+\newcommand\boxedredcross{\mbox{\ooalign{\redcross\cr\hidewidth$\square$\hidewidth\cr}}}
+
+\RequirePackage{basiclistings}
+\RequirePackage{email}
 \RequirePackage{exam}
+\RequirePackage{secondpage}
 
 \usepackage{import}
 \usepackage{standalone}
 \usepackage[yyyymmdd,hhmmss]{datetime}
 \renewcommand{\dateseparator}{-}
 
-% Margins
-\RequirePackage[top=35mm,bottom=35mm,left=25mm,right=25mm]{geometry}
-% Tables with colored cells
-\RequirePackage[table,dvipsnames]{xcolor}%
 % Graphics and images
 \RequirePackage{tikz}
 \RequirePackage{tikz-qtree}
@@ -22,8 +31,7 @@
 \RequirePackage[T1]{fontenc}
 
 
-\RequirePackage{email}
-\RequirePackage{basiclistings}
+
 \lstnewenvironment{blocklisting}{
     \lstset{
         basicstyle=\ttfamily,
@@ -44,24 +52,13 @@
 % Tables that can span across multiple pages
 \RequirePackage{longtable}
 % Math stuff
-\RequirePackage[mathscr]{euscript}
 \RequirePackage{amsmath,amssymb}
-\RequirePackage{mathtools}
 \RequirePackage[inline]{enumitem}
 \RequirePackage[binary-units=true,retain-explicit-plus,retain-zero-exponent]{siunitx} %SI units
 
-\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
-\newcommand\checkbox{$\square$}
-\RequirePackage{pifont}% http://ctan.org/pkg/pifont
-\newcommand\greencheckmark{{\color{ForestGreen}\ding{52}}}
-\newcommand\redcross{{\color{red}\ding{54}}}
-\newcommand\boxedgreencheckmark{\makebox[0pt][l]{$\square$}\raisebox{.15ex}{\hspace{0.1em}\greencheckmark}}
-\newcommand\boxedredcross{\mbox{\ooalign{\redcross\cr\hidewidth$\square$\hidewidth\cr}}}
 \newcommand\naturaljoin{\bowtie}
 \newcommand\select[2]{\sigma_{#1}({#2})}
 \newcommand\project[2]{\pi_{#1}({#2})}
 \newcommand\rename[2]{\rho_{#1}({#2})}
 \newcommand\AND{~\texttt{AND}~}
 
-% Copyright page
-\RequirePackage{secondpage}
