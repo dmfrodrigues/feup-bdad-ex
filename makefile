@@ -1,4 +1,4 @@
-LATEXMK=latexmk -f -interaction=nonstopmode --shell-escape -pdf
+LATEXMK=latexmk -f -interaction=nonstopmode --shell-escape -pdf -silent -quiet
 
 all: exams/BDAD_exams.pdf book/BDAD_book.pdf
 
@@ -18,6 +18,6 @@ test: FORCE
 	make -C exams test
 
 clean:
-	cd exams && latexmk -C
+	git clean -dfX
 
 FORCE:
