@@ -1,6 +1,8 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{bdad}
-\LoadClass[a4paper]{book}
+\LoadClass{bookauthor}
+
+\RequirePackage{exam}
 
 \usepackage{import}
 \usepackage{standalone}
@@ -60,48 +62,6 @@
 \newcommand\project[2]{\pi_{#1}({#2})}
 \newcommand\rename[2]{\rho_{#1}({#2})}
 \newcommand\AND{~\texttt{AND}~}
-% Answer separator
-\newcommand\ansseparator{\noindent\hfil\rule{0.5\textwidth}{.4pt}\hfil}
+
 % Copyright page
 \RequirePackage{secondpage}
-% Some work
-\def\title#1{\gdef\@title{#1}\gdef\@@title{#1}}
-\def\author#1{\gdef\@author{#1}\gdef\@@author{#1}}
-\let\@@title\@empty
-\let\@@author\@empty
-% Headers and footers
-\RequirePackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-\fancyhead[RE, LO]{\textit{\leftmark}}
-\fancyhead[LE, RO]{\thepage}
-\fancyfoot[LE, RO]{\ifx\@@author\@empty\else\@@author\fi}
-% Sections
-\makeatletter
-\renewcommand\thesection{\thechapter\ifnum\c@section>\z@ -P\arabic{section}\fi}
-\renewcommand\thesubsection{\thesection-\arabic{subsection}}
-\renewcommand\thesubsubsection{\thesubsection\alph{subsubsection}}
-\makeatother
-
-\makeatletter
-\renewcommand{\l@chapter}{\bfseries\@dottedtocline{0}{0em}{2.5em}}
-\renewcommand{\l@section}{\normalfont\@dottedtocline{1}{1em}{3.7em}}
-\renewcommand{\l@subsection}{\normalfont\@dottedtocline{2}{2em}{4.5em}}
-\renewcommand{\l@subsubsection}{\normalfont\@dottedtocline{3}{3em}{4.5em}}
-\makeatother
-
-\RequirePackage{titlesec}
-\newcommand{\sectionbreak}{\clearpage}
-\titleformat{\chapter}[display]
-  {\normalfont\bfseries}{}{0pt}{\Huge}
-
-% Alias
-\setcounter{secnumdepth}{-2}
-\newcommand\exam[1]{\chapter{#1}}
-\newcommand\exampart[1]{\section{#1}}
-\newcommand\question[1]{\subsection{#1}}
-\newcommand\information[1]{\subsection*{#1}}
-\newcommand\questionitem[1]{\subsubsection{#1}}
-
