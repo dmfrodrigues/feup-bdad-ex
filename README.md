@@ -42,3 +42,4 @@ The files not authored by me are presented as a fundamental complement to the pr
 
 Aside from me, the following contributors played a fundamental role in collecting further information about the contents of this repository:
 - [João António Sousa](https://github.com/JoaoASousa)
+- [Tomás Agante Martins](https://github.com/tagantemartins)
