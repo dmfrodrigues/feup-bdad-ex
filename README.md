@@ -11,7 +11,7 @@
 - **Subjects:** Introduction to databases, UML modelling, relations, database construction, querying and management
 - **Environment:** SQLite3
 - **Tools:** SQL
-- **Course grade:** ?/20
+- **Course grade:** 18/20
 
 ## Contents
 
