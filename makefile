@@ -1,4 +1,4 @@
-LATEXMK=latexmk -f -interaction=nonstopmode --shell-escape -pdf -silent -quiet
+LATEXMK=latexmk -f -interaction=nonstopmode --shell-escape -pdf# -silent -quiet
 
 all: exams/BDAD_exams.pdf book/BDAD_book.pdf
 
